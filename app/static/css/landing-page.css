@@ -1,0 +1,81 @@
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("{{ url_for('static', filename='img/1.jpg')}}") no-repeat center center;
+  background-size: cover;
+  padding-top: 15rem;
+  padding-bottom: 2rem;
+}
+
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+nav ul{
+background-color:transparent;
+overflow: hidden;
+/*when browser collapses in mobile then no shrinking and no scrolling*/
+margin: 0;
+padding: 0;
+}
+ul.topnav li{
+list-style: none;
+float: left;
+}
+ul.topnav li.topnav-right {
+list-style: none;
+float: right;
+}
+ul.topnav li a {
+display: block;
+text-decoration: none;
+min-height: 16px;
+text-align: center;
+padding: 14px;
+
+}
+
+ul.topnav li.dropdownIcon {
+display: none;
+}
+@media screen and (max-width: 680px){
+ul.topnav li:not(:nth-child(1)){
+display: none;
+}
+ul.topnav li.dropdownIcon {
+display: block;
+float: right;
+}
+ul.topnav.responsive li.dropdownIcon {
+position: absolute;
+top: 0;
+right: 0;
+}
+ul.topnav.responsive{
+position: relative;
+}
+ul.topnav.responsive li{
+display: inline;
+float: none;
+}
+ul.topnav.responsive li a {
+display: block;
+text-align: left;}
+}
+
+

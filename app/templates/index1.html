@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
+
+    
+  </head>
+  <style>
+body {
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  
+nav{
+width: 100%;
+margin: 0;
+}
+nav ul{
+background-color:transparent;
+overflow: hidden;
+/*when browser collapses in mobile then no shrinking and no scrolling*/
+margin: 0;
+padding: 0;
+}
+ul.topnav li{
+list-style: none;
+float: left;
+}
+ul.topnav li.topnav-right {
+list-style: none;
+float: right;
+}
+ul.topnav li a {
+display: block;
+text-decoration: none;
+min-height: 16px;
+text-align: center;
+padding: 14px;
+text-transform: uppercase;
+}
+
+ul.topnav li.dropdownIcon {
+display: none;
+}
+@media screen and (max-width: 680px){
+ul.topnav li:not(:nth-child(1)){
+display: none;
+}
+ul.topnav li.dropdownIcon {
+display: block;
+float: right;
+}
+ul.topnav.responsive li.dropdownIcon {
+position: absolute;
+top: 0;
+right: 0;
+}
+ul.topnav.responsive{
+position: relative;
+}
+ul.topnav.responsive li{
+display: inline;
+float: none;
+}
+ul.topnav.responsive li a {
+display: block;
+text-align: left;}
+</style>
+  <body>
+	 <!-- Navigation -->
+ 
+  
+  <nav>
+
+        <ul class="topnav" id="dropdownClick">
+            <a class="navbar-brand" href="#"><img src="static/image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" >  </a></li>
+			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Terms of Use</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Privacy Policy</a></li>
+            
+            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        </ul>
+    </nav>
+				  
+				
+			  
+			
+	
+		 <!-- END COLORLIB-ASIDE -->
+		
+			<div class="container">
+						<div class="row">
+								
+							{%for i in range(le)%}
+							
+									<div class="column"  >
+									<div class="card " style=" height: 20rem; width: 15rem; margin: 18px 18px 18px 18px;background-color:	#F8F8F8; " >
+									  <div class="text-center">
+									  <img src="static/image/{{ie[i]}}" height="100" width="100" style="padding-top: 10px;">
+									    <div class="card-body"> 
+										<h5 class="card-title">{{nam[i]}}</h5>
+										</div>
+										<p class="card-text">Genre-{{g[i]}}</p>
+										<a href="{{u[i]}}" class="align-self-end btn btn-primary ">Click Here</a>
+									  </div>
+									</div>
+								</div>
+							{%endfor%}
+								
+						</div>
+						
+							<!-- END-->
+			    		
+			</div>	
+			
+
+<!--footer-->
+<style>
+.footer{
+
+width: 97%;
+bottom: 0;
+padding-top: 2rem;
+padding-bottom:0.5rem;
+bottom: 0;  
+}
+</style>
+  <div class="footer">
+    
+	
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; FlexiHub 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+  </div>
+
+  <!-- loader -->
+  
+
+  <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/scrollax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/google-map.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/main.js') }}"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
+
+</head>
+<style>
+body {
+  background-image: url("{{ url_for('static', filename='img/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  nav{
+width: 100%;
+margin: 0;
+}
+nav ul{
+background-color:transparent;
+overflow: hidden;
+/*when browser collapses in mobile then no shrinking and no scrolling*/
+margin: 0;
+padding: 0;
+}
+ul.topnav li{
+list-style: none;
+float: left;
+}
+ul.topnav li.topnav-right {
+list-style: none;
+float: right;
+}
+ul.topnav li a {
+display: block;
+text-decoration: none;
+min-height: 16px;
+text-align: center;
+padding: 14px;
+
+}
+
+ul.topnav li.dropdownIcon {
+display: none;
+}
+@media screen and (max-width: 680px){
+ul.topnav li:not(:nth-child(1)){
+display: none;
+}
+ul.topnav li.dropdownIcon {
+display: block;
+float: right;
+}
+ul.topnav.responsive li.dropdownIcon {
+position: absolute;
+top: 0;
+right: 0;
+}
+ul.topnav.responsive{
+position: relative;
+}
+ul.topnav.responsive li{
+display: inline;
+float: none;
+}
+ul.topnav.responsive li a {
+display: block;
+text-align: left;}
+}
+</style>
+
+<body>
+
+{% block body %}{% endblock %}
+<!-- Footer -->
+<style>
+.footer{
+position:absolute;
+width: 97%;
+padding-top: 2rem;
+padding-bottom:0.5rem;
+bottom: 0; 
+}
+</style>
+  
+  
+  <div class="footer">
+    
+	
+      <div class="row">
+	  
+        <div class="col-lg-6 h-100 text-center text-lg-left">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#" style="font-weight: bold;">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="font-weight: bold;">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="font-weight: bold;">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#" style="font-weight: bold;">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0" style="font-weight: bold;">&copy; FlixHub 2020. All Rights Reserved.</p>
+        </div>
+		
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
+
+
