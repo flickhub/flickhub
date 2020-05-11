@@ -26,22 +26,22 @@ nav{
 width: 100%;
 margin: 0;
 }
-nav ul{
+nav ol{
 background-color:transparent;
 overflow: hidden;
 /*when browser collapses in mobile then no shrinking and no scrolling*/
 margin: 0;
 padding: 0;
 }
-ul.topnav li{
+ol.topnav li{
 list-style: none;
 float: left;
 }
-ul.topnav li.topnav-right {
+ol.topnav li.topnav-right {
 list-style: none;
 float: right;
 }
-ul.topnav li a {
+ol.topnav li a {
 display: block;
 text-decoration: none;
 min-height: 16px;
@@ -50,48 +50,55 @@ padding: 14px;
 text-transform: uppercase;
 }
 
-ul.topnav li.dropdownIcon {
-display: none;
+ol.topnav li.dropdownIcon {
+display: None;
 }
 @media screen and (max-width: 680px){
-ul.topnav li:not(:nth-child(1)){
+ol.topnav li:not(:nth-child(1)){
 display: none;
 }
-ul.topnav li.dropdownIcon {
+
+ol.topnav li.dropdownIcon {
 display: block;
 float: right;
 }
-ul.topnav.responsive li.dropdownIcon {
+ol.topnav.responsive li.dropdownIcon {
 position: absolute;
 top: 0;
 right: 0;
 }
-ul.topnav.responsive{
+ol.topnav.responsive{
 position: relative;
 }
-ul.topnav.responsive li{
+ol.topnav.responsive li{
 display: inline;
 float: none;
 }
-ul.topnav.responsive li a {
+ol.topnav.responsive li a {
 display: block;
-text-align: left;}
+text-align: left;
+
+div.container 
+}
 </style>
   <body>
 	 <!-- Navigation -->
  
   
   <nav>
-
-        <ul class="topnav" id="dropdownClick">
-            <a class="navbar-brand" href="#"><img src="static/image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" >  </a></li>
+			
+        <ol class="topnav" id="dropdownClick">
+            <li><a class="navbar-brand" href="#"><img src="static/image/logo1.jpg" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
+			<li class="topnav-right" style="padding:14px;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name1"></li>
+			<li class="dropdownIcon" style="padding:14px;padding-top: 2rem;padding-right: 2rem;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name1"></li>
+			
 			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Terms of Use</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Privacy Policy</a></li>
             
-            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
-        </ul>
+            
+        </ol>
     </nav>
 				  
 				
@@ -100,17 +107,17 @@ text-align: left;}
 	
 		 <!-- END COLORLIB-ASIDE -->
 		
-			<div class="container">
+			<div class="container" style="padding-top: 2rem;">
 						<div class="row">
 								
 							{%for i in range(le)%}
 							
 									<div class="column"  >
-									<div class="card " style=" height: 20rem; width: 15rem; margin: 18px 18px 18px 18px;background-color:	#F8F8F8; " >
+									<div class="card " style=" height: 20rem; width: 15rem; margin: 10px; background-color:	#F8F8F8; " >
 									  <div class="text-center">
 									  <img src="static/image/{{ie[i]}}" height="100" width="100" style="padding-top: 10px;">
 									    <div class="card-body"> 
-										<h5 class="card-title">{{nam[i]}}</h5>
+										<h5 class="card-title" style="font-size:15px;">{{nam[i]}}</h5>
 										</div>
 										<p class="card-text">Genre-{{g[i]}}</p>
 										<a href="{{u[i]}}" class="align-self-end btn btn-primary ">Click Here</a>
@@ -135,6 +142,7 @@ bottom: 0;
 padding-top: 2rem;
 padding-bottom:0.5rem;
 bottom: 0;  
+padding-left:1.5rem;
 }
 </style>
   <div class="footer">
@@ -142,7 +150,7 @@ bottom: 0;
 	
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left">
-          <ul class="list-inline mb-2">
+          <ol class="list-inline mb-2">
             <li class="list-inline-item">
               <a href="#">About</a>
             </li>
@@ -158,11 +166,11 @@ bottom: 0;
             <li class="list-inline-item">
               <a href="#">Privacy Policy</a>
             </li>
-          </ul>
+          </ol>
           <p class="text-muted small mb-4 mb-lg-0">&copy; FlexiHub 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
+          <ol class="list-inline mb-0">
             <li class="list-inline-item mr-3">
               <a href="#">
                 <i class="fab fa-facebook fa-2x fa-fw"></i>
@@ -178,7 +186,7 @@ bottom: 0;
                 <i class="fab fa-instagram fa-2x fa-fw"></i>
               </a>
             </li>
-          </ul>
+          </ol>
         </div>
       </div>
  
