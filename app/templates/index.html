@@ -21,11 +21,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow:auto;
   }
-h1{
-    margin:0;
-    padding:0;
-}  
+span{
+ font-size:125px; font-weight: bold;margin:0;}
 nav{
 width: 100%;
 margin: 0;
@@ -80,7 +79,9 @@ float: none;
 ol.topnav.responsive li a {
 display: block;
 text-align: left;}
-
+span{
+font-size:80px; font-weight: bold;margin:0;}
+}
 
 }
 </style>
@@ -91,7 +92,7 @@ text-align: left;}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="#"><img src="static/image/logo1.jpg" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
+            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo1.jpg')}}" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
 
 			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
@@ -106,10 +107,10 @@ text-align: left;}
   <!-- Masthead -->
   <header class="masthead text-black text-center">
     
-    <div class="container">
-      <div class="row" style=" padding-top: 8rem;">
+    <div class="container"  >
+      <div class="row" style=" padding-top: 8rem;" style="height: auto; width:100%; position: fixed;">
         <div class="col-xl-9 mx-auto">
-          <span class="idea" style="color:white; font-size:125px; font-weight: bold;margin:0;">Flick</span><span class="idea"  style="color: orange; font-size:125px; font-weight: bold; margin:0;">Hub</span>
+          <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form method="POST" action="/submit">
