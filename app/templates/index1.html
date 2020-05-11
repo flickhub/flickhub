@@ -21,6 +21,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow:auto;
   }
   
 nav{
@@ -89,7 +90,7 @@ div.container
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="#"><img src="static/image/logo1.jpg" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
+            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo1.jpg')}}" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
 			<li class="topnav-right" style="padding:14px;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name1"></li>
 			<li class="dropdownIcon" style="padding:14px;padding-top: 2rem;padding-right: 2rem;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name1"></li>
 			
