@@ -15,15 +15,7 @@ def submit():
             return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3)    
         else:
             return redirect(url_for('home'))
-        mvname=request.form["mv_name1"]
-        if(mvname!=""):
-            print(mvname)
-            m="%"+mvname+"%"
-            #db search
-            url_name3,img3,l,name3,genre3=see(m)
-            return redirect('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3)    
-        else:
-            return redirect(url_for('home'))
+       
         
 app.run(debug=True)
 
