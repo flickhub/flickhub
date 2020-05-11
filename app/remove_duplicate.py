@@ -1,4 +1,5 @@
 
+
 def dup(n2,g2,s2,u2):
 		
 		img=[]
