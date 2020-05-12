@@ -7,10 +7,7 @@
     <!-- Bootstrap core CSS -->
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
-  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<!-- Custom styles for this template -->
+  <!-- Custom styles for this template -->
   <link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
 
     
@@ -23,7 +20,9 @@ body {
   background-size: cover;
   overflow:auto;
   }
-  
+div.card{height: 20rem; width: 15rem; margin: 10px;}
+h5.card-title{font-size:15px;}
+img.ideaa{height:120px; width:120px;padding-top: 10px;}
 nav{
 width: 100%;
 margin: 0;
@@ -62,12 +61,12 @@ display: none;
 
 ol.topnav li.dropdownIcon {
 display: block;
-float: right;
+
 }
 ol.topnav.responsive li.dropdownIcon {
 position: absolute;
 top: 0;
-right: 0;
+
 }
 ol.topnav.responsive{
 position: relative;
@@ -78,9 +77,29 @@ float: none;
 }
 ol.topnav.responsive li a {
 display: block;
-text-align: left;
 
-div.container 
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+span{
+font-size:45px;margin:0;font-weight:bold;}
+input.form-control{
+width:80%;height:50%;margin:auto;margin-bottom:0}
+button.btn{
+width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
+ol.mb-2,p.text-muted{font-size:10px;}
+ol.mb-0{font-size:8px;}
+li.dropdownIcon input{
+margin:2rem;}
+div.card{height: 12rem; width: 8rem; margin: 10px;}
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
+a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 }
 </style>
   <body>
@@ -90,9 +109,9 @@ div.container
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo1.jpg')}}" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
+            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
 			<li class="topnav-right" style="padding:14px;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name1"></li>
-			<li class="dropdownIcon" style="padding:14px;padding-top: 2rem;padding-right: 2rem;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name1"></li>
+			<li class="dropdownIcon"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name1"></li>
 			
 			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
@@ -109,17 +128,17 @@ div.container
 	
 		 <!-- END COLORLIB-ASIDE -->
 		
-			<div class="container" style="padding-top: 2rem;">
+			<div class="container" >
 						<div class="row">
 								
 							{%for i in range(le)%}
 							
 									<div class="column"  >
-									<div class="card " style=" height: 20rem; width: 15rem; margin: 10px; background-color:	#F8F8F8; " >
+									<div class="card " style="  background-color:	#F8F8F8; " >
 									  <div class="text-center">
-									  <img src="static/image/{{ie[i]}}" height="100" width="100" style="padding-top: 10px;">
+									  <img class="ideaa" src="static/image/{{ie[i]}}"  >
 									    <div class="card-body"> 
-										<h5 class="card-title" style="font-size:15px;">{{nam[i]}}</h5>
+										<h5 class="card-title">{{nam[i]}}</h5>
 										</div>
 										<p class="card-text">Genre-{{g[i]}}</p>
 										<a href="{{u[i]}}" class="align-self-end btn btn-primary ">Click Here</a>
@@ -138,12 +157,12 @@ div.container
 <!--footer-->
 <style>
 .footer{
-
-width: 97%;
-bottom: 0;
-margin-top: 20rem;
-margin-bottom:0.5rem;
-margin-left:1.5rem;
+ margin-top:5rem;
+ margin-left:2rem;
+ margin-bottom:1rem;
+ position: float;
+ bottom: 0;
+ width: 80%;
 }
 </style>
   <div class="footer">
