@@ -112,8 +112,8 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 			
         <ol class="topnav" id="dropdownClick">
             <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="200" height="50" class="d-inline-block align-top" alt="" >  </a></li>
-			<li class="topnav-right" style="padding:14px;"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name1"></li>
-			<li class="dropdownIcon"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name1"></li>
+			<li class="topnav-right" style="padding:14px;"><form method="POST" action="/submit"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name"></form></li>
+			<li class="dropdownIcon"><form method="POST" action="/submit"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem "name="mv_name"></form></li>
 			
 			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
             <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
