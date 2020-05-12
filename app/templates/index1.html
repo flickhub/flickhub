@@ -4,11 +4,12 @@
   <head>
     <meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- Bootstrap core CSS -->
-  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
- <link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
 
     
   </head>
@@ -38,6 +39,14 @@ ol.topnav li.topnav-right {
 list-style: none;
 float: right;
 }
+ol.topnav li.topnav-right1 {
+list-style: none;
+float: right;
+}
+ol.topnav li.myonly {
+list-style: none;
+float: right;
+}
 ol.topnav li a {
 display: block;
 text-decoration: none;
@@ -59,7 +68,9 @@ display: none;
 li.my{
 display: block;
 }
-
+ol.topnav-responsive li.myonly {
+display:none;
+}
 ol.topnav li:not(:nth-child(1)){
 display: none;
 }
@@ -71,12 +82,27 @@ ol.topnav-responsive li.dropdownIcon {
 position: absolute;
 top: 3px;
 right: 3px;
+padding:5px;
+
 }
 ol.topnav-responsive{
 position: relative;
 
 }
-ol.topnav-responsive li:not(:nth-child(1)){
+ol.topnav-responsive li.myonly1{
+display: block;
+float: left}
+
+ol.topnav-responsive li.topnav-right1{
+margin-top:30px;
+display: block;
+text-decoration: none;
+text-align:right;
+text-transform: uppercase;
+font-size:15px;
+padding:3px
+}
+ol.topnav-responsive li.topnav-right{
 
 display: block;
 text-decoration: none;
@@ -89,7 +115,6 @@ ol.topnav-responsive li a:not(:nth-child(1)){
 display:None;
 
 }
-
 
 .row1{
   display: flex;
@@ -120,10 +145,9 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
-			<li class="topnav-right " style="padding:14px;"><form method="POST" action="/submit"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name"></form></li>
-			
-			<li class="topnav-right"><a href="#" style="color:white; ">About</a></li>
+            <li class="myonly1"><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+			<li class="myonly" style="padding:14px;"><form method="POST" action="/submit"><input type="text" placeholder="Search.." style=" border-color:transparent; width:19rem " name="mv_name"></form></li>
+			<li class="topnav-right1"><a href="#" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="#" style="color:white; ">Contact</a></li>
             <li class="topnav-right"><a href="#" style="color:white; ">Terms of Use</a></li>
             <li class="topnav-right"><a href="#" style="color:white; ">Privacy Policy</a></li>
