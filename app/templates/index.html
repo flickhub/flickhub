@@ -50,9 +50,10 @@ ol.topnav li a {
 display: block;
 text-decoration: none;
 min-height: 16px;
-text-align: center;
+text-align:right;
 padding: 14px;
 text-transform: uppercase;
+font-size:20px;
 }
 
 ol.topnav li.dropdownIcon {
@@ -66,25 +67,32 @@ ol.topnav li.dropdownIcon {
 display: block;
 float: right;
 }
-ol.topnav.responsive li.dropdownIcon {
+ol.topnav-responsive li.dropdownIcon {
 position: absolute;
-top: 0;
-right: 0;
+top: 3px;
+right: 3px;
 }
-ol.topnav.responsive{
+ol.topnav-responsive{
 position: relative;
+
 }
-ol.topnav.responsive li{
-display: inline;
-float: none;
-}
-ol.topnav.responsive li a {
+ol.topnav-responsive li:not(:nth-child(1)){
+
 display: block;
-text-align: left;}
+text-decoration: none;
+text-align:right;
+text-transform: uppercase;
+font-size:15px;
+padding:3px
+}
+ol.topnav-responsive li a:not(:nth-child(1)){
+display:None;
+
+}
 span{
 font-size:45px;margin:0;font-weight:bold}
 input.form-control{
-width:80%;height:50%;margin:auto;margin-bottom:0;font-size:15px;}
+width:75%;height:50%;margin:auto;margin-bottom:0;font-size:15px;}
 button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
@@ -101,14 +109,16 @@ ol.mb-0{font-size:8px;}
         <ol class="topnav" id="dropdownClick">
             <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
 
-			<li class="topnav-right"><a href="#" style="color:white; font-size:20px;">About</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Contact</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Terms of Use</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; font-size:20px;">Privacy Policy</a></li>
+			<li class="topnav-right"><a href="#" style="color:white; ">About</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; ">Contact</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; ">Terms of Use</a></li>
+            <li class="topnav-right"><a href="#" style="color:white; ">Privacy Policy</a></li>
             <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
-                    </ol>
+        </ol>
     </nav>
 				  
+
+
 
   <!-- Masthead -->
   <header class="masthead text-black text-center">
@@ -194,7 +204,17 @@ ol.mb-0{font-size:8px;}
 
   <!-- loader -->
   
+<script>
+function dropdownMenu(){
+var x=document.getElementById("dropdownClick");
+if (x.className==="topnav"){
+x.className +="-responsive";
+}
+else {
+x.className="topnav";}
 
+}
+</script
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
