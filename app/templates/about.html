@@ -16,23 +16,19 @@
     
   </head>
   <style>
+html {
+  height: 100%;}
 body {
+  min-height: 100%;position: relative;
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
   }
-span{
- font-size:125px; font-weight: bold;margin:0;}
-nav{
-width: 100%;
-margin: 0;
-}
-h3{
-color:white; font-size:40px;padding-top:0;padding-bottom:5px; margin:0;font-weight:bold;}
-ol.mb-0{right:0}
-
+div.card{height: 20rem; width: 15rem; margin: 10px;}
+h5.card-title{font-size:15px;}
+img.ideaa{height:120px; width:120px;padding-top: 10px;}
 nav ol{
 background-color:transparent;
 overflow: hidden;
@@ -45,6 +41,14 @@ list-style: none;
 float: left;
 }
 ol.topnav li.topnav-right {
+list-style: none;
+float: right;
+}
+ol.topnav li.topnav-right1 {
+list-style: none;
+float: right;
+}
+ol.topnav li.myonly {
 list-style: none;
 float: right;
 }
@@ -61,7 +65,20 @@ font-size:20px;
 ol.topnav li.dropdownIcon {
 display: none;
 }
+li.my{
+display: none;
+}
+p{font-size:1.5rem;}
 @media screen and (max-width: 880px){
+html {
+  height: 100%;}
+
+li.my{
+display: block;
+}
+ol.topnav-responsive li.myonly {
+display:none;
+}
 ol.topnav li:not(:nth-child(1)){
 display: none;
 }
@@ -73,12 +90,27 @@ ol.topnav-responsive li.dropdownIcon {
 position: absolute;
 top: 3px;
 right: 3px;
+padding:5px;
+
 }
 ol.topnav-responsive{
 position: relative;
 
 }
-ol.topnav-responsive li:not(:nth-child(1)){
+ol.topnav-responsive li.myonly1{
+display: block;
+float: left}
+
+ol.topnav-responsive li.topnav-right1{
+margin-top:30px;
+display: block;
+text-decoration: none;
+text-align:right;
+text-transform: uppercase;
+font-size:15px;
+padding:3px
+}
+ol.topnav-responsive li.topnav-right{
 
 display: block;
 text-decoration: none;
@@ -91,18 +123,28 @@ ol.topnav-responsive li a:not(:nth-child(1)){
 display:None;
 
 }
-span{
-font-size:45px;padding:0;font-weight:bold}
-h3{
-color:white; font-size:15px;padding-top:0;padding-bottom:5px; margin:0;font-weight:normal;}
 
+.row1{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+span{
+font-size:45px;margin:0;font-weight:bold;}
 input.form-control{
-width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
+width:80%;height:50%;margin:auto;margin-bottom:0}
 button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
-
+li.dropdownIcon input{
+margin:2rem;}
+div.card{height: 12rem; width: 8rem; margin: 10px;}
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
+a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
+p{font-size:1rem;}
 }
 </style>
   <body>
@@ -126,18 +168,45 @@ ol.mb-0{font-size:8px;}
 
 
   <!-- Masthead -->
-  
-
+ <div class="row" style="color:white; margin:1.2rem;">
+ <div class="col-12">
+ <h1 style="text-align:center">About Us</h1>
+ <p >
+ At Zee5, the online video streaming Over The Top (OTT) platform, we truly believe that for entertainment to come alive, you need to feel it. That’s where Zee5 brings in the advantage of the language of your comfort! With 12 navigational and featured languages across original features, live TV, catch up TV, lifestyle shows, children's programmes, exclusive short series and acclaimed plays - it’s unlimited entertainment in the language that sounds   like home. Zee5 offers an exhaustive array of content; with 90+ live TV channels and 1.25 lac+ hours of viewing across the languages of English, Hindi, Bengali, Malayalam, Tamil, Telugu, Kannada, Marathi, Oriya, Bhojpuri, Gujarati & Punjabi making it a complete video destination for OTT viewers. Our exhaustive selection of Bollywood and language movies make us the preferred destination for an avid cinema connoisseur. 
+ </p>
+ <p >
+  We offer a comfortable and friendly user experience with highly evolved video streaming technology at amazing speed and crystal clear sounds. Language Navigation, Seamless Video playback, Smart Content Search & recommendation, option to choose video quality and much more create a video experience like no other. All you need is a compatible connected device. Tune into Zee5 now, in your language! 
+ </p>
+ <p >
+ Zee5 can be accessed at Zee5 can be accessed at <a href="https://protect-eu.mimecast.com/s/f0MKCRP4vCG3xgWFPfvt7?domain=zee5.com">www.zee5.com</a> and application for downloading on mobile, tablet, laptop, desktop, etc. is available on the Google Play Store and Apple App Store.
+ <p >Zee5 can be accessed at <a href="https://protect-eu.mimecast.com/s/f0MKCRP4vCG3xgWFPfvt7?domain=zee5.com">www.zee5.com</a> and application for downloading on mobile, tablet, laptop, desktop, etc. is available on the Google Play Store and Apple App Store.
+ </p>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
 <!--footer-->
-<style>
+ <style>
 .footer{
- margin-left:2rem;
- margin-bottom:1rem;
  position: absolute;
  bottom: 0;
+
+ margin-left:2rem;
+ margin-bottom:1rem;
+ text-align: center;
  width: 80%;
 }
 </style>
+ 
+	<div class="row" style="width:80%;">
+			<div class="col-6" >
+			<h4 style="margin:10rem;"></h4>
+			</div>
+			</div>
+	
   <div class="footer">
     
 	
@@ -189,7 +258,16 @@ ol.mb-0{font-size:8px;}
 
   <!-- loader -->
   
+<script>
+function dropdownMenu(){
+var x=document.getElementById("dropdownClick");
+if (x.className==="topnav"){
+x.className +="-responsive";
+}
+else {
+x.className="topnav";}
 
+}</script>
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
