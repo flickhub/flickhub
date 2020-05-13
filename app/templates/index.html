@@ -22,6 +22,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
+  line-height:3.5rem;
   }
 span{
  font-size:125px; font-weight: bold;margin:0;}
@@ -29,6 +30,7 @@ nav{
 width: 100%;
 margin: 0;
 }
+
 h3{
 color:white; font-size:40px;padding-top:0;padding-bottom:5px; margin:0;font-weight:bold;}
 ol.mb-0{right:0}
@@ -61,7 +63,11 @@ font-size:20px;
 ol.topnav li.dropdownIcon {
 display: none;
 }
+span.idea1{display:block; color:white;font-size:45px;font-weight:500;}
+
 @media screen and (max-width: 880px){
+body{ line-height:1.5rem;
+  }
 ol.topnav li:not(:nth-child(1)){
 display: none;
 }
@@ -92,9 +98,8 @@ display:None;
 
 }
 span{
-font-size:45px;padding:0;font-weight:bold}
-h3{
-color:white; font-size:15px;padding-top:0;padding-bottom:5px; margin:0;font-weight:normal;}
+font-size:45px;padding:0;font-weight:bold,}
+
 
 input.form-control{
 width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
@@ -102,7 +107,7 @@ button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
-
+span.idea1{display:block; color:white;font-size:15px;font-weight:500;}
 }
 </style>
   <body>
@@ -132,13 +137,13 @@ ol.mb-0{font-size:8px;}
       <div class="row" style=" padding-top: 8rem;" style="height: auto; width:100%; position: fixed;">
         <div class="col-xl-9 mx-auto">
           <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
-		  <h3 >Nobody Searches it better!</h3>
+		  <span class="idea1" >Nobody Searches it better!</span>
 		</div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form method="POST" action="/submit">
             <div class="form-row " >
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Search with a keyword"  name="mv_name">
+                <input type="text" class="form-control form-control-lg" style="margin-top:5px;" placeholder="Search with a keyword"  name="mv_name">
 				</div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn btn-secondary">Search!</button>
@@ -152,15 +157,24 @@ ol.mb-0{font-size:8px;}
   </header>
 
 <!--footer-->
-<style>
+ <style>
 .footer{
- margin-left:2rem;
- margin-bottom:1rem;
  position: absolute;
  bottom: 0;
+
+ margin-left:2rem;
+ margin-bottom:1rem;
+ text-align: center;
  width: 80%;
 }
 </style>
+ 
+	<div class="row" style="width:80%;">
+			<div class="col-6" >
+			<h4 style="margin:10rem;"></h4>
+			</div>
+			</div>
+	
   <div class="footer">
     
 	
@@ -208,6 +222,7 @@ ol.mb-0{font-size:8px;}
  
   </div>
 
+	
   <!-- loader -->
   
 <script>
