@@ -14,7 +14,7 @@ def submit():
             url_name3,img3,l,name3,genre3=see(m)
             return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3)    
         else:
-            return redirect(url_for('home'))
+            return render_template('blank1.html')
 @app.route("/about")
 def about():
     return render_template('about.html')  
