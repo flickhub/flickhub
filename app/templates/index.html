@@ -29,6 +29,8 @@ nav{
 width: 100%;
 margin: 0;
 }
+h3{
+color:white; font-size:40px;padding-top:0;padding-bottom:5px; margin:0;font-weight:bold;}
 ol.mb-0{right:0}
 
 nav ol{
@@ -90,9 +92,12 @@ display:None;
 
 }
 span{
-font-size:45px;margin:0;font-weight:bold}
+font-size:45px;padding:0;font-weight:bold}
+h3{
+color:white; font-size:15px;padding-top:0;padding-bottom:5px; margin:0;font-weight:normal;}
+
 input.form-control{
-width:75%;height:50%;margin:auto;margin-bottom:0;font-size:15px;}
+width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
 button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
@@ -107,12 +112,12 @@ ol.mb-0{font-size:8px;}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+            <li><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
 
-			<li class="topnav-right"><a href="#" style="color:white; ">About</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; ">Contact</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; ">Terms of Use</a></li>
-            <li class="topnav-right"><a href="#" style="color:white; ">Privacy Policy</a></li>
+			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
+            <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
+            <li class="topnav-right"><a href="/tos" style="color:white; ">Terms of Use</a></li>
+            <li class="topnav-right"><a href="/pp" style="color:white; ">Privacy Policy</a></li>
             <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
     </nav>
@@ -127,12 +132,13 @@ ol.mb-0{font-size:8px;}
       <div class="row" style=" padding-top: 8rem;" style="height: auto; width:100%; position: fixed;">
         <div class="col-xl-9 mx-auto">
           <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
-        </div>
+		  <h3 >Nobody Searches it better!</h3>
+		</div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form method="POST" action="/submit">
             <div class="form-row " >
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" placeholder="Nobody Searches it better!"  name="mv_name">
+                <input type="text" class="form-control form-control-lg" placeholder="Search with a keyword"  name="mv_name">
 				</div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn btn-secondary">Search!</button>
@@ -162,19 +168,19 @@ ol.mb-0{font-size:8px;}
         <div class="col-lg-6 h-100 text-center text-lg-left">
           <ol class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="#" style="color:white;">About</a>
+              <a href="/about" style="color:white;">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#" style="color:white;">Contact</a>
+              <a href="/contact" style="color:white;">Contact</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#" style="color:white;">Terms of Use</a>
+              <a href="/tos" style="color:white;">Terms of Use</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#" style="color:white;">Privacy Policy</a>
+              <a href="/pp" style="color:white;">Privacy Policy</a>
             </li>
           </ol>
           <p class="text-muted small mb-4 mb-lg-0">&copy; FlickHub 2020. All Rights Reserved.</p>
@@ -182,17 +188,17 @@ ol.mb-0{font-size:8px;}
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ol class="list-inline mb-0" >
             <li class="list-inline-item mr-3">
-              <a href="#" style="color:white;">
+              <a href="" style="color:white;">
                 <i class="fab fa-facebook fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item mr-3">
-              <a href="#" style="color:white;">
+              <a href="" style="color:white;">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" style="color:white;">
+              <a href="" style="color:white;">
                 <i class="fab fa-instagram fa-2x fa-fw"></i>
               </a>
             </li>
@@ -214,7 +220,7 @@ else {
 x.className="topnav";}
 
 }
-</script
+</script>
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
