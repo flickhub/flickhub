@@ -77,7 +77,15 @@ display: none;
 @media screen and (max-width: 880px){
 html {
   height: 100%;}
-
+body {
+  min-height: 100%;position: relative;
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow:auto;
+  line-height:3.2vh;
+  }
 li.my{
 display: block;
 }
@@ -90,6 +98,7 @@ display: none;
 ol.topnav li.dropdownIcon {
 display: block;
 float: right;
+height:4hv;
 }
 ol.topnav-responsive li.dropdownIcon {
 position: absolute;
