@@ -4,35 +4,32 @@
   <head>
     <meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS --><title>FlickHub</title>
+	<link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
   <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<!-- Custom styles for this template -->
-  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-
+  
     
   </head>
   <style>
+html {
+  height: 100%;}
 body {
+  min-height: 100%;position: relative;
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
   }
-span{
- font-size:125px; font-weight: bold;margin:0;}
-nav{
-width: 100%;
-margin: 0;
-}
-h3{
-color:white; font-size:40px;padding-top:0;padding-bottom:5px; margin:0;font-weight:bold;}
-ol.mb-0{right:0}
-
+div.card{height: 20rem; width: 15rem; margin: 10px;}
+h5.card-title{font-size:15px;}
+img.d-inline-block{width:10vw ;height:5vh;}
+img.ideaa{height:120px; width:120px;padding-top: 10px;}
 nav ol{
 background-color:transparent;
 overflow: hidden;
@@ -45,6 +42,14 @@ list-style: none;
 float: left;
 }
 ol.topnav li.topnav-right {
+list-style: none;
+float: right;
+}
+ol.topnav li.topnav-right1 {
+list-style: none;
+float: right;
+}
+ol.topnav li.myonly {
 list-style: none;
 float: right;
 }
@@ -61,7 +66,20 @@ font-size:20px;
 ol.topnav li.dropdownIcon {
 display: none;
 }
+li.my{
+display: none;
+}
+p{font-size:1.5rem;}
 @media screen and (max-width: 880px){
+html {
+  height: 100%;}
+
+li.my{
+display: block;
+}
+ol.topnav-responsive li.myonly {
+display:none;
+}
 ol.topnav li:not(:nth-child(1)){
 display: none;
 }
@@ -73,12 +91,27 @@ ol.topnav-responsive li.dropdownIcon {
 position: absolute;
 top: 3px;
 right: 3px;
+padding:5px;
+
 }
 ol.topnav-responsive{
 position: relative;
 
 }
-ol.topnav-responsive li:not(:nth-child(1)){
+ol.topnav-responsive li.myonly1{
+display: block;
+float: left}
+
+ol.topnav-responsive li.topnav-right1{
+margin-top:30px;
+display: block;
+text-decoration: none;
+text-align:right;
+text-transform: uppercase;
+font-size:15px;
+padding:3px
+}
+ol.topnav-responsive li.topnav-right{
 
 display: block;
 text-decoration: none;
@@ -91,18 +124,29 @@ ol.topnav-responsive li a:not(:nth-child(1)){
 display:None;
 
 }
-span{
-font-size:45px;padding:0;font-weight:bold}
-h3{
-color:white; font-size:15px;padding-top:0;padding-bottom:5px; margin:0;font-weight:normal;}
 
+.row1{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+img.d-inline-block{width:30vw ;height:5vh;}
+span{
+font-size:45px;margin:0;font-weight:bold;}
 input.form-control{
-width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
+width:80%;height:50%;margin:auto;margin-bottom:0}
 button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
-
+li.dropdownIcon input{
+margin:2rem;}
+div.card{height: 12rem; width: 8rem; margin: 10px;}
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
+a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
+p{font-size:1rem;}
 }
 </style>
   <body>
@@ -112,12 +156,10 @@ ol.mb-0{font-size:8px;}
    <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+            <li><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
 
 			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
-            <li class="topnav-right"><a href="/tos" style="color:white; ">Terms of Use</a></li>
-            <li class="topnav-right"><a href="/pp" style="color:white; ">Privacy Policy</a></li>
             <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
     </nav>
@@ -126,18 +168,41 @@ ol.mb-0{font-size:8px;}
 
 
   <!-- Masthead -->
-  
-
+ <div class="row" style="color:white; margin:1.2rem;">
+ <div class="col-12">
+ <h1 style="text-align:center"></h1>
+ <p >
+ </p>
+ <p >
+ </p>
+ <p >
+<p ></p>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
 <!--footer-->
-<style>
+ <style>
 .footer{
- margin-left:2rem;
- margin-bottom:1rem;
  position: absolute;
  bottom: 0;
+
+ margin-left:2rem;
+ margin-bottom:1rem;
+ text-align: center;
  width: 80%;
 }
 </style>
+ 
+	<div class="row" style="width:80%;">
+			<div class="col-6" >
+			<h4 style="margin:10rem;"></h4>
+			</div>
+			</div>
+	
   <div class="footer">
     
 	
@@ -151,15 +216,7 @@ ol.mb-0{font-size:8px;}
             <li class="list-inline-item">
               <a href="/contact" style="color:white;">Contact</a>
             </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="/tos" style="color:white;">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="/pp" style="color:white;">Privacy Policy</a>
-            </li>
-          </ol>
+            </ol>
           <p class="text-muted small mb-4 mb-lg-0">&copy; FlickHub 2020. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
@@ -189,7 +246,16 @@ ol.mb-0{font-size:8px;}
 
   <!-- loader -->
   
+<script>
+function dropdownMenu(){
+var x=document.getElementById("dropdownClick");
+if (x.className==="topnav"){
+x.className +="-responsive";
+}
+else {
+x.className="topnav";}
 
+}</script>
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
