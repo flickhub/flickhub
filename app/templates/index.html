@@ -16,29 +16,27 @@
     
   </head>
   <style>
-div.mx-auto{
-margin-top:5%}
-div.col-md-3{
-margin-top:3%}
-div.form-control-lg{
-margin-top:3%;}
+
+span{
+ font-size:15vh; font-weight: bold;}
+span.idea1{display:block; color:white;font-size:4vh;font-weight:500;}
+div.containeri{margin-top:15%;}
+input.form-control-lg{width:35vw;margin-left:8vw;}
+button.btn-lg{width:6vw;margin-left:.5vw;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
-  line-height:3.7rem;
+  line-height:4.7vh;
   }
-span{
- font-size:125px; font-weight: bold;margin:0;}
+
 nav{
 width: 100%;
 margin: 0;
 }
 
-h3{
-color:white; font-size:40px;padding-top:0;padding-bottom:3%; margin:0;font-weight:bold;}
 ol.mb-0{right:0}
 
 nav ol{
@@ -69,8 +67,7 @@ font-size:20px;
 ol.topnav li.dropdownIcon {
 display: none;
 }
-span.idea1{display:block; color:white;font-size:45px;font-weight:500;}
-div.containeri{margin-top:35%;}
+
 
 @media screen and (max-width: 880px){
 body{ line-height:1.4rem;
@@ -142,7 +139,7 @@ div.containeri{margin-top:25%;}
   <header class="masthead text-black text-center">
     
     <div class="containeri"  >
-      <div class="row" style=" padding-top: 10%;" style="height: auto; width:100%; position: fixed;">
+      <div class="row"  style="height: auto; width:100%;">
         <div class="col-xl-9 mx-auto">
           <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
 		  <span class="idea1" >Nobody Searches it better!</span>
@@ -153,7 +150,7 @@ div.containeri{margin-top:25%;}
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <input type="text" class="form-control form-control-lg" placeholder="Search with a keyword"  name="mv_name" >
 				</div>
-              <div class="col-12 col-md-3"style="margin-top:0%;">
+              <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn btn-secondary" >Search!</button>
               </div>
             </div>
