@@ -24,10 +24,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
+  line-height:4.7vh;
   }
 div.card{height: 20rem; width: 15rem; margin: 10px;}
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
+img.d-inline-block{width:10vw ;height:5vh;}
+
 nav ol{
 background-color:transparent;
 overflow: hidden;
@@ -54,11 +57,14 @@ float: right;
 ol.topnav li a {
 display: block;
 text-decoration: none;
-min-height: 16px;
+min-height: 10%;
 text-align:right;
-padding: 14px;
+padding-left: 2vw;
 text-transform: uppercase;
-font-size:20px;
+font-size:2.5vh;
+margin-right:2vw;
+
+font-family: "Tangerine", serif;
 }
 
 ol.topnav li.dropdownIcon {
@@ -153,12 +159,10 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li class="myonly1"><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
-			<li class="myonly" style="padding:14px;"><form method="POST" action="/submit"><input type="text" placeholder="Search with a keyword" style=" border-color:transparent; width:19rem " name="mv_name"></form></li>
+            <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
+			<li class="myonly" style="margin-top:0.5vh; margin-right:1vh ;"><form method="POST" action="/submit"><input type="text" placeholder="Search with a keyword" style=" border-color:transparent; width:19rem;  height:4vh; " name="mv_name"></form></li>
 			<li class="topnav-right1"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
-            <li class="topnav-right"><a href="/tos" style="color:white; ">Terms of Use</a></li>
-            <li class="topnav-right"><a href="/pp" style="color:white; ">Privacy Policy</a></li>
             
 			<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
@@ -202,31 +206,31 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 
 
   <!-- loader -->
-    <!--footer-->
-  <style>
+   <style>
 .footer{
  position: absolute;
  bottom: 0;
-
- margin-left:2rem;
- margin-bottom:1rem;
+line-height:3vh;
+ margin-left:1vw;
+ margin-bottom:2vh;
  text-align: center;
- width: 80%;
+ width: 98%;
+ 
 }
 </style>
  
 	<div class="row" style="width:80%;">
 			<div class="col-6" >
-			<h4 style="margin:10rem;"></h4>
+			<h4 style="margin:10%;"></h4>
 			</div>
 			</div>
 	
   <div class="footer">
     
 	
-      <div class="row" >
+      <div class="row" style="margin:0">
         <div class="col-lg-6 h-100 text-center text-lg-left">
-          <ol class="list-inline mb-2">
+          <ol class="list-inline mb-2" >
             <li class="list-inline-item">
               <a href="/about" style="color:white;">About</a>
             </li>
@@ -235,15 +239,8 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
               <a href="/contact" style="color:white;">Contact</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="/tos" style="color:white;">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="/pp" style="color:white;">Privacy Policy</a>
-            </li>
-          </ol>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; FlickHub 2020. All Rights Reserved.</p>
+            </ol>
+          <p class="text-muted small mb-4 mb-lg-0" >&copy; FlickHub 2020. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ol class="list-inline mb-0" >
@@ -267,6 +264,9 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
       </div>
  
   </div>
+  
+  
+  
 <script>
 function dropdownMenu(){
 var x=document.getElementById("dropdownClick");
