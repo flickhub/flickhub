@@ -12,8 +12,7 @@
   <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<!-- Custom styles for this template -->
-  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-
+  
     
   </head>
   <style>
@@ -22,8 +21,9 @@ span{
  font-size:15vh; font-weight: bold;}
 span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
 div.containeri{margin-top:15%;}
-input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;}
-button.btn-lg{width:6vw;margin-left:.5vw;height:3.7vh}
+input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;font-size:2vh;}
+button.btn-lg{width:6vw;margin-left:.5vw;height:3.7vh;font-size:1.5vh;}
+img.d-inline-block{width:10vw ;height:5vh;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
@@ -60,9 +60,9 @@ display: block;
 text-decoration: none;
 min-height: 10%;
 text-align:right;
-padding-left: 1vw;
+padding-left: 2vw;
 text-transform: uppercase;
-font-size:3vh;
+font-size:2.5vh;
 }
 
 ol.topnav li.dropdownIcon {
@@ -123,7 +123,7 @@ div.containeri{margin-top:25%;}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+            <li><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
 
 			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
@@ -168,10 +168,10 @@ div.containeri{margin-top:25%;}
  position: absolute;
  bottom: 0;
 
- margin-left:2rem;
- margin-bottom:1rem;
+ margin-left:4vw;
+ margin-bottom:2vh;
  text-align: center;
- width: 80%;
+ width: 90%;
 }
 </style>
  
