@@ -21,8 +21,8 @@ span{
  font-size:15vh; font-weight: bold;}
 span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
 div.containeri{margin-top:15%;}
-input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;font-size:2vh;margin-top:2vh;}
-button.btn-lg{width:6vw;margin-left:.5vw;height:3.7vh;font-size:1.5vh;margin-top:2vh;}
+input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;font-size:2vh;margin-top:2vh;border-radius:10vh;}
+button.btn-lg{width:4vw;margin-left:.9vw;height:3.7vh;font-size:1.5vh;margin-top:2vh;padding:0.1vh ;display:block;}
 img.d-inline-block{width:10vw ;height:5vh;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
@@ -60,11 +60,11 @@ display: block;
 text-decoration: none;
 min-height: 10%;
 text-align:right;
-padding-left: 2vw;
+
 text-transform: uppercase;
 font-size:2.5vh;
 margin-right:2vw;
-font-family: "Tangerine", serif;
+font-family:"Trebuchet MS", Helvetica, sans-serif;
 }
 
 ol.topnav li.dropdownIcon {
@@ -73,7 +73,7 @@ display: none;
 
 
 @media screen and (max-width: 880px){
-body{ line-height:1.4rem;
+body{ line-height:5vh;
   }
 ol.topnav li:not(:nth-child(1)){
 display: none;
@@ -106,16 +106,17 @@ display:None;
 }
 span{
 font-size:45px;padding:0;font-weight:bold}
+img.d-inline-block{width:20vw ;height:5vh;}
 
 
 input.form-control{
-width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
+width:85%;height:35%;margin-bottom:0;font-size:13px;}
 button.btn{
-width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0;}
+width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;margin-top:0;}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
 span.idea1{display:block; color:white;font-size:15px;font-weight:400;}
-div.containeri{margin-top:25%;}
+div.containeri{margin-top:25vh;margin-left:5vw;}
 }
 </style>
   <body>
@@ -143,7 +144,7 @@ div.containeri{margin-top:25%;}
       <div class="row"  style="height: auto; width:100%;">
         <div class="col-xl-9 mx-auto">
           <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
-		  <span class="idea1" >Nobody Searches it better!</span>
+		  <span class="idea1" >Nobody Searches it better !</span>
 		</div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form method="POST" action="/submit">
