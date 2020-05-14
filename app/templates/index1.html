@@ -6,7 +6,8 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
-  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
+ <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
@@ -152,7 +153,7 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li class="myonly1"><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+            <li class="myonly1"><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
 			<li class="myonly" style="padding:14px;"><form method="POST" action="/submit"><input type="text" placeholder="Search with a keyword" style=" border-color:transparent; width:19rem " name="mv_name"></form></li>
 			<li class="topnav-right1"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
