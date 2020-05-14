@@ -16,19 +16,29 @@
     
   </head>
   <style>
-html {
-  height: 100%;}
+
+span{
+ font-size:15vh; font-weight: bold;}
+span.idea1{display:block; color:white;font-size:4vh;font-weight:500;}
+div.containeri{margin-top:15%;}
+input.form-control-lg{width:35vw;margin-left:8vw;}
+button.btn-lg{width:6vw;margin-left:.5vw;}
 body {
-  min-height: 100%;position: relative;
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
+  line-height:4.7vh;
   }
-div.card{height: 20rem; width: 15rem; margin: 10px;}
-h5.card-title{font-size:15px;}
-img.ideaa{height:120px; width:120px;padding-top: 10px;}
+
+nav{
+width: 100%;
+margin: 0;
+}
+
+ol.mb-0{right:0}
+
 nav ol{
 background-color:transparent;
 overflow: hidden;
@@ -44,42 +54,24 @@ ol.topnav li.topnav-right {
 list-style: none;
 float: right;
 }
-ol.topnav li.topnav-right1 {
-list-style: none;
-float: right;
-}
-ol.topnav li.myonly {
-list-style: none;
-float: right;
-}
 ol.topnav li a {
 display: block;
 text-decoration: none;
-min-height: 16px;
+min-height: 10%;
 text-align:right;
-padding: 14px;
+padding-left: 1vw;
 text-transform: uppercase;
-font-size:20px;
+font-size:3vh;
 }
 
 ol.topnav li.dropdownIcon {
 display: none;
 }
-li.my{
-display: none;
-}
-p{font-size:1.5rem;}
-div.row{margin-top:25%;}
-@media screen and (max-width: 880px){
-html {
-  height: 100%;}
 
-li.my{
-display: block;
-}
-ol.topnav-responsive li.myonly {
-display:none;
-}
+
+@media screen and (max-width: 880px){
+body{ line-height:1.4rem;
+  }
 ol.topnav li:not(:nth-child(1)){
 display: none;
 }
@@ -91,27 +83,12 @@ ol.topnav-responsive li.dropdownIcon {
 position: absolute;
 top: 3px;
 right: 3px;
-padding:5px;
-
 }
 ol.topnav-responsive{
 position: relative;
 
 }
-ol.topnav-responsive li.myonly1{
-display: block;
-float: left}
-
-ol.topnav-responsive li.topnav-right1{
-margin-top:30px;
-display: block;
-text-decoration: none;
-text-align:right;
-text-transform: uppercase;
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li.topnav-right{
+ol.topnav-responsive li:not(:nth-child(1)){
 
 display: block;
 text-decoration: none;
@@ -124,38 +101,25 @@ ol.topnav-responsive li a:not(:nth-child(1)){
 display:None;
 
 }
-
-.row1{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
 span{
-font-size:45px;margin:0;font-weight:bold;}
+font-size:45px;padding:0;font-weight:bold}
+
+
 input.form-control{
-width:80%;height:50%;margin:auto;margin-bottom:0}
+width:75%;height:50%;margin:auto;margin-bottom:0;font-size:13px;}
 button.btn{
-width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
+width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0;}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
-li.dropdownIcon input{
-margin:2rem;}
-div.card{height: 12rem; width: 8rem; margin: 10px;}
-h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
-img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
-p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
-a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
-p{font-size:1rem;}
-h1{font-size:.9rem;}
-div.row{margin-top:55%;}
-
+span.idea1{display:block; color:white;font-size:15px;font-weight:400;}
+div.containeri{margin-top:25%;}
 }
 </style>
   <body>
 	 <!-- Navigation -->
  
   
-   <nav>
+  <nav>
 			
         <ol class="topnav" id="dropdownClick">
             <li><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
@@ -167,22 +131,36 @@ div.row{margin-top:55%;}
             <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
     </nav>
-			  
+				  
 
 
 
   <!-- Masthead -->
- <div class="row" style="color:white">
- <div class="col-12">
- <h1 style="text-align:center ; text-align:center;vertical-align:center;" >Oops! try searching with another keyword</h1>
- 
- </div>
- </div>
- 
- 
- 
- 
- 
+  <header class="masthead text-black text-center">
+    
+    <div class="containeri"  >
+      <div class="row"  style="height: auto; width:100%;">
+        <div class="col-xl-9 mx-auto">
+          <span class="idea" style="color:white;">Flick</span><span class="idea" style="color:orange;" >Hub</span>
+		  <span class="idea1" >Nobody Searches it better!</span>
+		</div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form method="POST" action="/submit">
+            <div class="form-row " >
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-lg" placeholder="Search with a keyword"  name="mv_name" >
+				</div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn btn-secondary" >Search!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+		
+      </div>
+    </div>
+  </header>
+
 <!--footer-->
  <style>
 .footer{
@@ -198,7 +176,7 @@ div.row{margin-top:55%;}
  
 	<div class="row" style="width:80%;">
 			<div class="col-6" >
-			<h4 style="margin:10rem;"></h4>
+			<h4 style="margin:10%;"></h4>
 			</div>
 			</div>
 	
@@ -249,8 +227,7 @@ div.row{margin-top:55%;}
  
   </div>
 
-  <!-- loader -->
-
+	
   <!-- loader -->
   
 <script>
@@ -262,7 +239,8 @@ x.className +="-responsive";
 else {
 x.className="topnav";}
 
-}</script>
+}
+</script>
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
