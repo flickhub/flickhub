@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS --><title>FlickHub</title>
+	<link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
   <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -19,7 +20,7 @@
 
 span{
  font-size:15vh; font-weight: bold;}
-span.idea1{display:block; color:white;font-size:4vh;font-weight:500;}
+span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
 div.containeri{margin-top:15%;}
 input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;}
 button.btn-lg{width:6vw;margin-left:.5vw;height:3.7vh}
@@ -122,7 +123,7 @@ div.containeri{margin-top:25%;}
   <nav>
 			
         <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="/home"><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
+            <li><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}" width="150" ;height="25"; class="d-inline-block align-top " alt="" >  </a></li>
 
 			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
