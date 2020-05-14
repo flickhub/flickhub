@@ -60,7 +60,7 @@ text-decoration: none;
 min-height: 10%;
 text-align:right;
 
-text-transform: uppercase;
+
 font-size:2.5vh;
 margin-right:2vw;
 
@@ -111,7 +111,7 @@ margin-top:30px;
 display: block;
 text-decoration: none;
 text-align:right;
-text-transform: uppercase;
+
 font-size:15px;
 padding:3px
 }
@@ -120,7 +120,7 @@ ol.topnav-responsive li.topnav-right{
 display: block;
 text-decoration: none;
 text-align:right;
-text-transform: uppercase;
+
 font-size:15px;
 padding:3px
 }
@@ -134,6 +134,7 @@ display:None;
   justify-content: center;
   flex-direction: row;
 }
+img.d-inline-block{width:30vw ;height:5vh;}
 span{
 font-size:45px;margin:0;font-weight:bold;}
 input.form-control{
@@ -160,7 +161,7 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 			
         <ol class="topnav" id="dropdownClick">
             <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
-			<li class="myonly" style="margin-top:0.3vh; margin-right:1vh ;"><form method="POST" action="/submit"><input type="text" placeholder="Search with a keyword" style=" border-color:transparent; width:19rem;  height:4vh; border-radius:10vh; " name="mv_name"></form></li>
+			<li class="myonly" style="margin-top:0.3vh; margin-right:1vh ;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp Search with a keyword" style=" border-color:transparent; width:19rem;  height:4vh; border-radius:10vh; " name="mv_name"></form></li>
 			<li class="topnav-right1"><a href="/about" style="color:white; ">About</a></li>
             <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
             
@@ -170,7 +171,7 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 				
 			<div class="row">
 			<div class="col-12" >
-			<li class="my" style="margin-left:24px;"><form method="POST" action="/submit"><input type="text" placeholder="Search with a keyword" style=" border-color:transparent; width:19rem "name="mv_name"></form></li>
+			<li class="my" style="margin-left:24px;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp  Search with a keyword" style=" border-color:transparent; width:19rem ;height:4vh; border-radius:10vh;"name="mv_name"></form></li>
 			</div>
 			</div>
 	
@@ -215,13 +216,12 @@ line-height:3vh;
  margin-bottom:2vh;
  text-align: center;
  width: 98%;
- 
 }
 </style>
  
 	<div class="row" style="width:80%;">
 			<div class="col-6" >
-			<h4 style="margin:10vh;"></h4>
+			<h4 style="margin-top:20vh;"></h4>
 			</div>
 			</div>
 	
