@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Bootstrap core CSS --><title>FlickHub</title>
-	<link rel="icon" href=" {{ url_for('static', filename='image/logo4.jpg')}}" type="image/gif" sizes="16x16">
+	<link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
   <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -20,10 +20,10 @@
 span{
  font-size:15vh; font-weight: bold;}
 span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
-div.containeri{margin-top:15%;}
+div.containeri{margin-top:10%;}
 input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;font-size:2vh;margin-top:2vh;border-radius:10vh;}
 button.btn-lg{width:4vw;margin-left:.9vw;height:3.7vh;font-size:1.5vh;margin-top:2vh;padding:0.1vh ;display:block;border-radius:1vh;}
-img.d-inline-block{width:10vw ;height:3vh;}
+img.d-inline-block{width:5vw ;height:3vh;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
@@ -70,8 +70,9 @@ font-family:"Trebuchet MS", Helvetica, sans-serif;
 ol.topnav li.dropdownIcon {
 display: none;
 }
-
-
+h4{font-weight:200;}
+div.it{display:none;}
+div.col-6{ margin-top:4vh;margin-left:24vw}
 @media screen and (max-width: 880px){
 body{ line-height:3vh;
   }
@@ -106,7 +107,7 @@ display:None;
 }
 span{
 font-size:9vh;padding:0;font-weight:bold}
-img.d-inline-block{width:30vw ;height:3vh;}
+img.d-inline-block{width:25vw ;height:3vh;}
 
 
 input.form-control{
@@ -116,6 +117,9 @@ ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
 span.idea1{display:block; color:white;font-size:2vh;font-weight:400;margin-top:1vh}
 div.containeri{margin-top:25vh;margin-left:5vw;}
+h4{font-size:1.6vh;margin-left:3vw;}
+div.it{display:block; margin-top:5vh;margin-left:15vw;}
+div.col-6{display:none;}
 }
 </style>
   <body>
@@ -175,12 +179,16 @@ line-height:3vh;
 }
 </style>
  
-	<div class="row" style="width:80%;">
-			<div class="col-6" >
-			<h4 style="margin:10%;"></h4>
+	<div class="row" style="width:100%;line-height:1hv;">
+			<div class="col-6"style="">
+			<h4 style="color:white;text-align:center;font-style: italic;">Want to watch that popular flick? Not sure, which online streaming platform it is available on? Worry no more! FlickHub has got your back! Tap tap and away!</h4>
 			</div>
 			</div>
-	
+		<div class="row" style="width:70%;line-height:1hv;">
+			<div class="col-12 it"style="">
+			<h4 style="color:white;text-align:center;font-style: italic;">Want to watch that popular flick? Not sure, which online streaming platform it is available on? <br>Worry no more! FlickHub has got your back!<br> Tap tap and away!</h4>
+			</div>
+			</div>
   <div class="footer">
     
 	
