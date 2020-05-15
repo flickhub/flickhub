@@ -1,5 +1,4 @@
 
-
 def dup(n2,g2,s2,u2):
 		
 		img=[]
@@ -63,55 +62,55 @@ def dup(n2,g2,s2,u2):
 				name1.append(name22[x])
 				url1.append(url_name22[x])
 				site1.append(site22[x])
-				genre1.append(site22[x])
+				genre1.append(genre22[x])
 				l1.append(x)
 			elif(site22[x]=='PRIME'):
 				name2.append(name22[x])
 				url2.append(url_name22[x])
 				site2.append(site22[x])
-				genre2.append(site22[x])
+				genre2.append(genre22[x])
 				l2.append(x)
 			elif(site22[x]=='HOTSTAR'):
 				name3.append(name22[x])
 				url3.append(url_name22[x])
 				site3.append(site22[x])
-				genre3.append(site22[x])
+				genre3.append(genre22[x])
 				l3.append(x)
 			elif(site22[x]=='SONYLIV'):
 				name4.append(name22[x])
 				url4.append(url_name22[x])
 				site4.append(site22[x])
-				genre4.append(site22[x])
+				genre4.append(genre22[x])
 				l4.append(x)
 			elif(site22[x]=='ZEE5'):
 				name5.append(name22[x])
 				url5.append(url_name22[x])
 				site5.append(site22[x])
-				genre5.append(site22[x])
+				genre5.append(genre22[x])
 				l5.append(x)
 			elif(site22[x]=='VOOT'):
 				name6.append(name22[x])
 				url6.append(url_name22[x])
 				site6.append(site22[x])
-				genre6.append(site22[x])
+				genre6.append(genre22[x])
 				l6.append(x)
 			elif(site22[x]=='ALTBALAJI'):
 				name7.append(name22[x])
 				url7.append(url_name22[x])
 				site7.append(site22[x])
-				genre7.append(site22[x])
+				genre7.append(genre22[x])
 				l7.append(x)
 			elif(site22[x]=='EROSNOW'):
 				name8.append(name22[x])
 				url8.append(url_name22[x])
 				site8.append(site22[x])
-				genre8.append(site22[x])
+				genre8.append(genre22[x])
 				l8.append(x)
 			elif(site22[x]=='VIU'):
 				name9.append(name22[x])
 				url9.append(url_name22[x])
 				site9.append(site22[x])
-				genre9.append(site22[x])
+				genre9.append(genre22[x])
 				l8.append(x)
 
 		
@@ -217,4 +216,4 @@ def dup(n2,g2,s2,u2):
 			img.append('9.png')
 		
 			
-		return (url,img,site,name,genre)
+		return (url,img,site,name,genre) 
