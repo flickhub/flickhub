@@ -21,20 +21,38 @@ class User(Base):
 
 
 def see(m1):
-        m=m1
-        users =session.query(User).filter(User.f4.like(m)).all()
+        m=m1.split(" ")
+        l_w=len(m)
         name=[]
         genre=[]
         site=[]
         url_name=[]
         th=[]
-        for user in users:
-            name.append(user.f4)
-            genre.append(user.f5)
-            site.append(user.f2)
-            url_name.append(user.f3)
-            th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        for j in range(l_w):
+            users =session.query(User).filter(User.f4.like("%"+m[j]+"%")).all()
+            
+            for user in users:
+                name.append(user.f4)
+                genre.append(user.f5)
+                site.append(user.f2)
+                url_name.append(user.f3)
+                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        m=m1.split("-")
+        l_w=len(m)
+        
+        for j in range(l_w):
+            users =session.query(User).filter(User.f4.like("%"+m[j]+"%")).all()
+            
+            for user in users:
+                name.append(user.f4)
+                genre.append(user.f5)
+                site.append(user.f2)
+                url_name.append(user.f3)
+                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        
+        
         th=list(dict.fromkeys(th))
+            
         
         name2=[]
         genre2=[]
@@ -52,6 +70,6 @@ def see(m1):
         #removing duplicate
         url_name3,img3,site3,name3,genre3=dup(name2,genre2,site2,url_name2)
         
-        
+     
         l=len(site3)
         return (url_name3,img3,l,name3,genre3)
