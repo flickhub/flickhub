@@ -21,8 +21,8 @@ span{
  font-size:15vh; font-weight: bold;}
 span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
 div.containeri{margin-top:10%;}
-input.form-control-lg{width:35vw;margin-left:8vw;height:3.7vh;font-size:2vh;margin-top:2vh;border-radius:10vh;}
-button.btn-lg{width:4vw;margin-left:.9vw;height:3.7vh;font-size:1.5vh;margin-top:2vh;padding:0.1vh ;display:block;border-radius:1vh;}
+input.form-control-lg{width:45vw;margin-left:2.5vw;height:4.7vh;font-size:2vh;margin-top:2vh;border-radius:1.5vh;}
+button.btn-lg{width:5vw;margin-left:5vw;height:4.7vh;font-size:2vh;margin-top:2vh;padding:0.1vh ;display:block;border-radius:1.5vh;font-weight:800; background-color: orange;}
 img.d-inline-block{width:5vw ;height:3vh;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
@@ -111,8 +111,8 @@ img.d-inline-block{width:25vw ;height:3vh;}
 
 
 input.form-control{
-width:85%;height:35%;margin-bottom:0;font-size:13px;}
-button.btn-lg{width:11vw;height:3.7vh;font-size:1.5vh;margin:auto;display:block;border-radius:1vh;}
+width:95%;height:45%;margin-bottom:0;font-size:13px;border-radius:1vh;}
+button.btn-lg{width:15vw;height:3.7vh;font-size:1.9vh;margin:auto;display:block;border-radius:1vh;background-color: orange;}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
 span.idea1{display:block; color:white;font-size:2vh;font-weight:400;margin-top:1vh}
@@ -131,9 +131,7 @@ div.col-6{display:none;}
         <ol class="topnav" id="dropdownClick">
             <li><a class="navbar-brand" href=""><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
 
-			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
-            <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
-            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+			<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
     </nav>
 				  
@@ -156,7 +154,7 @@ div.col-6{display:none;}
                 <input type="text" class="form-control form-control-lg" placeholder=" Search with a keyword"  name="mv_name" >
 				</div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn btn-secondary" >Search!</button>
+                <button type="submit" class="btn btn-block btn-lg btn btn-warning" style="Color:#FFFFFF" >Search!</button>
               </div>
             </div>
           </form>
@@ -214,7 +212,7 @@ line-height:3vh;
               </a>
             </li>
             <li class="list-inline-item mr-3">
-              <a href="" style="color:white;">
+              <a href="https://twitter.com/flickhub_in" style="color:white;">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i>
               </a>
             </li>
