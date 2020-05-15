@@ -27,7 +27,13 @@ body {
   overflow:auto;
   line-height:4.7vh;
   }
+div.ch{margin-left:3.5vw;}
 div.card{height: 20rem; width: 15rem; margin: 10px;}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
 img.d-inline-block{width:5vw ;height:3vh;}
@@ -74,7 +80,11 @@ display: none;
 li.my{
 display: none;
 }
-
+a.btn-primary{font-size:2vh;margin-bottom:0;
+    padding-bottom: 0px;
+    border-bottom-width: 0px;
+    margin-bottom: 0px;
+}
 @media screen and (max-width: 880px){
 html {
   height: 100%;}
@@ -155,12 +165,21 @@ ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
 li.dropdownIcon input{
 margin:2rem;}
-div.card{height: 12rem; width: 8rem; margin: 10px;}
+div.card{height: 33vh; width: 8rem; margin: 10px;}
 h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
 img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
 p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
-a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
-
+a.btn-primary{font-size:1.3vh;margin-bottom:0;
+    padding-bottom: 0px;
+    border-bottom-width: 0px;
+    margin-bottom: 0px;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1vh;
+}
+div.ch{margin-left:10vw;}
 }
 </style>
   <body  style="margin-bottom:10px;">
@@ -172,9 +191,7 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
         <ol class="topnav" id="dropdownClick">
             <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
 			<li class="myonly" style="margin-top:0.3vh; margin-right:1vh ;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp Search with a keyword" style=" border-color:transparent; width:19rem;  height:3vh; border-radius:10vh; font-size:2vh" name="mv_name"></form></li>
-			<li class="topnav-right1"><a href="/about" style="color:white; ">About</a></li>
-            <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
-            
+			 
 			<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
         </ol>
     </nav>			  
@@ -198,9 +215,11 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 									  <img class="ideaa" src="static/image/{{ie[i]}}"  >
 									    <div class="card-body"> 
 										<h5 class="card-title">{{nam[i]}}</h5>
-										</div>
-										<p class="card-text">Genre-{{g[i]}}</p>
-										<a href="{{u[i]}}" class="align-self-end btn btn-primary ">Click Here</a>
+										</div >
+										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1vh">
+										<p class="card-text"style="margin-bottom:0">Genre-{{g[i]}}</p>
+										<a href="{{u[i]}}" class="align-self-end btn btn-primary " >Click Here</a>
+									  </div>
 									  </div>
 									</div>
 								</div>
@@ -221,7 +240,7 @@ a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
 .footer{
  position: absolute;
  bottom: 0;
-line-height:3vh;
+ line-height:3vh;
  margin-left:1vw;
  margin-bottom:2vh;
  text-align: center;
