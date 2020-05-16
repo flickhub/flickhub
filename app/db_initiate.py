@@ -3,7 +3,7 @@ from sqlalchemy.dialects.mysql.base import VARCHAR, LONGTEXT, INTEGER
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from remove_duplicate import dup
-engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
+engine = create_engine('mysql://root:FlickHub123@127.0.0.1:3306/flickhub', convert_unicode=True, echo=False)
 connection = engine.connect()
 
 Session = sessionmaker(bind=engine)
@@ -12,7 +12,7 @@ Base = declarative_base()
 metadata = MetaData()
 
 class User(Base):
-    __tablename__ = 'Connect'
+    __tablename__ = 'connect'
     f1 = Column('idconnect', INTEGER(display_width=11), primary_key=True, nullable=False)
     f2 = Column('id_site', nullable=False)
     f3 = Column('id_url', nullable=False)
