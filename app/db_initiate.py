@@ -56,7 +56,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        if "man" in m : 
+        elif "man" in m : 
             m4=m.split("man")
             l_w=len(m4)
             if(m4[1]==""):
@@ -69,7 +69,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        if "woman" in m : 
+        elif "woman" in m : 
             m4=m.split("woman")
             l_w=len(m4)
             if(m4[1]==""):
@@ -82,7 +82,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)        
-        if "boy" in m : 
+        elif "boy" in m : 
             m4=m.split("boy")
             l_w=len(m4)
             if(m4[1]==""):
@@ -95,7 +95,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)         
-        if "girl" in m : 
+        elif "girl" in m : 
             m4=m.split("girl")
             l_w=len(m4)
             if(m4[1]==""):
@@ -108,7 +108,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        if "mr." in m : 
+        elif "mr." in m : 
             m4=m.split("mr.")
             l_w=len(m4)
             if(m4[1]==""):
@@ -121,7 +121,7 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)   
-        if "mrs." in m : 
+        elif "mrs." in m : 
             m4=m.split("mrs.")
             l_w=len(m4)
             if(m4[1]==""):
@@ -134,8 +134,16 @@ def see(m1):
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        else:    
             
-        
+            
+            users =session.query(User).filter(User.f4.like("%"+m+"%")).all()    
+            for user in users:
+                name.append(user.f4)
+                genre.append(user.f5)
+                site.append(user.f2)
+                url_name.append(user.f3)
+                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
          
         
         th=list(dict.fromkeys(th))
