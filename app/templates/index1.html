@@ -27,7 +27,11 @@ body {
   overflow:auto;
   line-height:4.7vh;
   }
-div.ch{margin-left:3.5vw;}
+div.sp{margin-bottom:4%;}
+img.d{float:left;width:10%;height:5%;margin-top:2%;margin-left:4%;}
+input.into{width:65%;margin-top:1.5%;margin-left:1%;border-radius:1.5vh;border-color:black;}
+
+div.ch{margin-left:24%;}
 div.card{height: 20rem; width: 15rem; margin: 10px;}
 .card-body {
     -ms-flex: 1 1 auto;
@@ -36,58 +40,9 @@ div.card{height: 20rem; width: 15rem; margin: 10px;}
 }
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
-img.d-inline-block{width:7vw ;height:4vh;margin-top:25%;margin-left:40%}
-div.row1{margin-top:4vh}
-nav ol{
-background-color:transparent;
-overflow: hidden;
-/*when browser collapses in mobile then no shrinking and no scrolling*/
-margin: 0;
-padding: 0;
-}
-ol.topnav li{
-list-style: none;
-float: left;
-}
-ol.topnav li.topnav-right {
-list-style: none;
-float: right;
-}
-ol.topnav li.topnav-right1 {
-list-style: none;
-float: right;
-}
-ol.topnav li.myonly {
-list-style: none;
-float: right;
-}
-ol.topnav li a {
-display: block;
-text-decoration: none;
-min-height: 10%;
-text-align:right;
 
 
-font-size:2.5vh;
-margin-right:2vw;
 
-font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-ol.topnav li.dropdownIcon {
-display: none;
-}
-li.my{
-display: none;
-}
-a.btn-primary{font-size:2vh;margin-bottom:0;
-    padding-bottom: 0px;
-    border-bottom-width: 0px;
-    margin-bottom: 0px;
-}
-
-ol.topnav li.myonly {margin-top:2%;margin-right:75%}
-ol.topnav li.myonly form input.into{border-color:transparent; width:600%;  height:4.7vh; border-radius:1.5vh; font-size:2vh ;}
 
 @media screen and (max-width: 880px){
 html {
@@ -121,8 +76,8 @@ a.btn-primary{font-size:1.3vh;margin-bottom:0;
     flex: 1 1 auto;
     padding: 1vh;
 }
-ol.topnav li.myonly {margin-top:2%;}
-ol.topnav li.myonly form input.into{border-color:transparent; width:380%;  height:4vh; border-radius:1.5vh; font-size:2vh ;}
+ol.topnav li.myonly {margin-top:2%;margin-left:4%}
+ol.topnav li.myonly form input.into{border-color:transparent; width:100%;  height:4vh; border-radius:1.5vh; font-size:2vh ;}
 img.d-inline-block{width:30% ;height:3.5vh;}
 ol.topnav li.myonly1{margin-top:1%;margin-right:40%}
 div.card{height:23vh; width: 8rem; }
@@ -137,15 +92,12 @@ div.container{padding:5%}
 	 <!-- Navigation -->
  
   
-  <nav>
-			
-        <ol class="topnav" >
-            <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
-			<li class="myonly" ><form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form></li>
-			
-			
-        </ol>
-    </nav>			  
+<div class="sp">
+
+<img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" >
+<form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form>
+
+</div>		  
 				
 			<div class="row">
 			<div class="col-12" >
@@ -166,9 +118,9 @@ div.container{padding:5%}
 									    <div class="card-body"> 
 										<h5 class="card-title">{{nam[i]}}</h5>
 										</div >
-										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1vh">
+										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1%">
 										<p class="card-text"style="margin-bottom:0">Genre-{{g[i]}}</p>
-										<a href="{{u[i]}}" target="_blank" class="align-self-end btn btn-primary " style="padding:1vh;">Click Here</a>
+										<a href="{{u[i]}}" target="_blank" class="align-self-end btn btn-primary " >Click Here</a>
 									  </div>
 									  </div>
 									</div>
