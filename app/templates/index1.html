@@ -36,8 +36,8 @@ div.card{height: 20rem; width: 15rem; margin: 10px;}
 }
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
-img.d-inline-block{width:5vw ;height:3vh;}
-
+img.d-inline-block{width:7vw ;height:4vh;margin-top:4vh;margin-left:10vh}
+div.row1{margin-top:4vh}
 nav ol{
 background-color:transparent;
 overflow: hidden;
@@ -97,56 +97,11 @@ body {
   overflow:auto;
   line-height:3.2vh;
   }
-li.my{
+li.my,ol.topnav li.myonly1{
 display: block;
 }
-ol.topnav-responsive li.myonly {
+ol.topnav li.myonly{
 display:none;
-}
-ol.topnav li:not(:nth-child(1)){
-display: none;
-}
-ol.topnav li.dropdownIcon {
-display: block;
-float: right;
-height:4hv;
-}
-ol.topnav-responsive li.dropdownIcon {
-position: absolute;
-top: 3px;
-right: 3px;
-padding:5px;
-
-}
-ol.topnav-responsive{
-position: relative;
-
-}
-ol.topnav-responsive li.myonly1{
-display: block;
-float: left}
-
-ol.topnav-responsive li.topnav-right1{
-margin-top:30px;
-display: block;
-text-decoration: none;
-text-align:right;
-
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li.topnav-right{
-
-display: block;
-text-decoration: none;
-text-align:right;
-
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li a:not(:nth-child(1)){
-display:None;
-
 }
 
 .row1{
@@ -154,17 +109,17 @@ display:None;
   justify-content: center;
   flex-direction: row;
 }
-img.d-inline-block{width:25vw ;height:3vh;}
+img.d-inline-block{width:27vw ;height:5vh;margin-left:24vh;margin-bottom:2vh;}
 span{
 font-size:45px;margin:0;font-weight:bold;}
 input.form-control{
 width:80%;height:50%;margin:auto;margin-bottom:0}
+
 button.btn{
 width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
-li.dropdownIcon input{
-margin:2rem;}
+
 div.card{height: 30vh; width: 8rem; margin: 10px;}
 h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
 img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
@@ -188,17 +143,17 @@ div.ch{margin-left:10vw;}
   
   <nav>
 			
-        <ol class="topnav" id="dropdownClick">
-            <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
-			<li class="myonly" style="margin-top:0.3vh; margin-right:1vh ;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp Search with a keyword" style=" border-color:transparent; width:19rem;  height:3vh; border-radius:10vh; font-size:2vh" name="mv_name"></form></li>
-			 
-			<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        <ol class="topnav" >
+            <li class="myonly" style="margin-top:4vh;margin-right:40vh"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp {{nam1}}" style=" border-color:transparent; width:133vh;  height:4.7vh; border-radius:1.5vh; font-size:2vh " name="mv_name"> </form></li>
+			<li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
+			
+			
         </ol>
     </nav>			  
 				
 			<div class="row">
 			<div class="col-12" >
-			<li class="my" style="margin-left:7vw;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp  Search with a keyword" style=" border-color:transparent; width:19rem ;height:3vh; border-radius:10vh; font-size:1.5vh"name="mv_name"></form></li>
+			<li class="my" style="margin-left:7vw;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp  {{nam1}}" style=" border-color:transparent; width:19rem ;height:5vh; border-radius:10vh; font-size:1.5vh"name="mv_name" ></form></li>
 			</div>
 			</div>
 	
