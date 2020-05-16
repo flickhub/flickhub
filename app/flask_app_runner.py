@@ -9,10 +9,11 @@ def submit():
         mvname=request.form["mv_name"]
         if(mvname!=""):
             print(mvname)
-            m="%"+mvname+"%"
+            m=mvname
+            
             #db search
             url_name3,img3,l,name3,genre3=see(m)
-            return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3)    
+            return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3,nam1=m)    
         else:
             return render_template('blank1.html')
 @app.route("/about")
@@ -21,12 +22,8 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
-@app.route("/tos")
-def tos():
-    return render_template('tos.html')       
-@app.route("/pp")
-def pp():
-    return render_template('pp.html')
+
+
 app.run(debug=True)
 
 
