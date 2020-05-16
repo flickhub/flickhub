@@ -85,6 +85,10 @@ a.btn-primary{font-size:2vh;margin-bottom:0;
     border-bottom-width: 0px;
     margin-bottom: 0px;
 }
+
+ol.topnav li.myonly {margin-top:2%;margin-right:75%}
+ol.topnav li.myonly form input.into{border-color:transparent; width:600%;  height:4.7vh; border-radius:1.5vh; font-size:2vh ;}
+
 @media screen and (max-width: 880px){
 html {
   height: 100%;}
@@ -97,33 +101,16 @@ body {
   overflow:auto;
   line-height:3.2vh;
   }
-li.my,ol.topnav li.myonly1{
+li.my,ol.topnav li.myonly{
 display: block;
 }
-ol.topnav li.myonly{
-display:none;
-}
+
 
 .row1{
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-img.d-inline-block{width:27vw ;height:5vh;margin-left:24vh;margin-bottom:2vh;}
-span{
-font-size:45px;margin:0;font-weight:bold;}
-input.form-control{
-width:80%;height:50%;margin:auto;margin-bottom:0}
-
-button.btn{
-width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
-ol.mb-2,p.text-muted{font-size:10px;}
-ol.mb-0{font-size:8px;}
-
-div.card{height: 30vh; width: 8rem; margin: 10px;}
-h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
-img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
-p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
 a.btn-primary{font-size:1.3vh;margin-bottom:0;
     padding-bottom: 0px;
     border-bottom-width: 0px;
@@ -134,7 +121,16 @@ a.btn-primary{font-size:1.3vh;margin-bottom:0;
     flex: 1 1 auto;
     padding: 1vh;
 }
-div.ch{margin-left:10vw;}
+ol.topnav li.myonly {margin-top:2%;}
+ol.topnav li.myonly form input.into{border-color:transparent; width:380%;  height:4vh; border-radius:1.5vh; font-size:2vh ;}
+img.d-inline-block{width:30% ;height:3.5vh;}
+ol.topnav li.myonly1{margin-top:1%;margin-right:40%}
+div.card{height:23vh; width: 8rem; }
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
+div.ch{margin-left:8vw;}
+div.container{padding:5%}
 }
 </style>
   <body  style="margin-bottom:10px;">
@@ -144,8 +140,8 @@ div.ch{margin-left:10vw;}
   <nav>
 			
         <ol class="topnav" >
-            <li class="myonly" style="margin-top:2%;margin-right:75%"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword" style=" border-color:transparent; width:600%;  height:4.7vh; border-radius:1.5vh; font-size:2vh " name="mv_name" value="  {{nam1}}"> </form></li>
-			<li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
+            <li class="myonly1"><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
+			<li class="myonly" ><form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form></li>
 			
 			
         </ol>
@@ -153,7 +149,6 @@ div.ch{margin-left:10vw;}
 				
 			<div class="row">
 			<div class="col-12" >
-			<li class="my" style="margin-left:7vw;"><form method="POST" action="/submit"><input type="text" placeholder="&nbsp  Search with a keyword" style=" border-color:transparent; width:19rem ;height:5vh; border-radius:10vh; font-size:1.5vh"name="mv_name" value="  {{nam1}}"></form></li>
 			</div>
 			</div>
 	
