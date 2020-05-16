@@ -22,11 +22,8 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
-<<<<<<< Updated upstream
 
 
-app.run(debug=True)
-=======
 @app.route("/tos")
 def tos():
     return render_template('tos.html')       
@@ -36,7 +33,6 @@ def pp():
 
 if __name__ == "__main__":
 	app.run(debug=True)
->>>>>>> Stashed changes
 
 
 
