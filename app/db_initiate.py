@@ -3,7 +3,7 @@ from sqlalchemy.dialects.mysql.base import VARCHAR, LONGTEXT, INTEGER
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from remove_duplicate import dup
-engine = create_engine('mysql://root:FlickHub123@127.0.0.1:3306/flickhub', convert_unicode=True, echo=False)
+engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
 connection = engine.connect()
 
 Session = sessionmaker(bind=engine)
@@ -12,7 +12,7 @@ Base = declarative_base()
 metadata = MetaData()
 
 class User(Base):
-    __tablename__ = 'connect'
+    __tablename__ = 'Connect'
     f1 = Column('idconnect', INTEGER(display_width=11), primary_key=True, nullable=False)
     f2 = Column('id_site', nullable=False)
     f3 = Column('id_url', nullable=False)
@@ -29,114 +29,206 @@ def see(m1):
         th=[]
         m=m1
         m2=m1
-      
+        counter=1
         
         if " " in m : 
+            counter=0
             m4=m.split(" ")
             l_w=len(m4)
+            counter1=1
             if(m4[l_w-1]==""):
-                m2=m.strip()
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                #check here
+                    counter1=1
+                    m=m4[0]
+                    if "-" in m : 
+                        counter1=0
+                        
+                        m4=m.split("-")
+                        users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).all()    
+                        for user in users:
+                            name.append(user.f4)
+                            genre.append(user.f5)
+                            site.append(user.f2)
+                            url_name.append(user.f3)
+                            th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "man" in m : 
+                        counter1=0
+                        m4=m.split("man")
+                        l_w=len(m4)
+                        if(m4[1]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"man"+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "woman" in m : 
+                        counter1=0
+                        m4=m.split("woman")
+                        l_w=len(m4)
+                        if(m4[1]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"woman"+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "boy" in m : 
+                        counter1=0
+                        m4=m.split("boy")
+                        l_w=len(m4)
+                        if(m4[1]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"boy"+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "girl" in m : 
+                        counter1=0
+                        m4=m.split("girl")
+                        l_w=len(m4)
+                        if(m4[1]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"girl"+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "mr." in m : 
+                        counter1=0
+                        m4=m.split("mr.")
+                        l_w=len(m4)
+                        if(m4[0]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+"mr."+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if "mrs." in m : 
+                        counter1=0
+                        m4=m.split("mrs.")
+                        l_w=len(m4)
+                        if(m4[0]==""):
+                            users =session.query(User).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+"mrs."+"%")).all()    
+                            for user in users:
+                                name.append(user.f4)
+                                genre.append(user.f5)
+                                site.append(user.f2)
+                                url_name.append(user.f3)
+                                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                    if (counter1!=0) :        
+                        users =session.query(User).filter(User.f4.like("%"+m+"%")).all()    
+                        for user in users:
+                            name.append(user.f4)
+                            genre.append(user.f5)
+                            site.append(user.f2)
+                            url_name.append(user.f3)
+                            th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+                        
+            else:
+                if (l_w==2):
+                    users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+m4[1]+"%")).all()    
+                elif (l_w==3):
+                    users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+m4[2]+"%")).all()
+                elif (l_w==4):
+                    users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+m4[2]+"%")).filter(User.f4.like("%"+m4[2]+"%")).all()
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
         if "-" in m : 
+            counter=0
+            
             m4=m.split("-")
-            l_w=len(m4)
-            if(m4[l_w-1]==""):
-                m2=m.strip("-")
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
+            users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).all()    
             for user in users:
                 name.append(user.f4)
                 genre.append(user.f5)
                 site.append(user.f2)
                 url_name.append(user.f3)
                 th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        elif "man" in m : 
+        if "man" in m : 
+            counter=0
             m4=m.split("man")
             l_w=len(m4)
             if(m4[1]==""):
-                m2=m4[0]+" "+"man"
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        elif "woman" in m : 
+                users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"man"+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if "woman" in m : 
+            counter=0
             m4=m.split("woman")
             l_w=len(m4)
             if(m4[1]==""):
-                m2=m4[0]+" "+"woman"
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)        
-        elif "boy" in m : 
+                users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"woman"+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if "boy" in m : 
+            counter=0
             m4=m.split("boy")
             l_w=len(m4)
             if(m4[1]==""):
-                m2=m4[0]+" "+"boy"
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)         
-        elif "girl" in m : 
+                users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"boy"+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if "girl" in m : 
+            counter=0
             m4=m.split("girl")
             l_w=len(m4)
             if(m4[1]==""):
-                m2=m4[0]+" "+"girl"
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        elif "mr." in m : 
+                users =session.query(User).filter(User.f4.like("%"+m4[0]+"%")).filter(User.f4.like("%"+"girl"+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if "mr." in m : 
+            counter=0
             m4=m.split("mr.")
             l_w=len(m4)
-            if(m4[1]==""):
-                m2=m4[0]+" "+"mr."
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)   
-        elif "mrs." in m : 
+            if(m4[0]==""):
+                users =session.query(User).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+"mr."+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if "mrs." in m : 
+            counter=0
             m4=m.split("mrs.")
             l_w=len(m4)
-            if(m4[1]==""):
-                m2=m4[0]+" "+"mrs."
-                print(m2)
-            users =session.query(User).filter(User.f4.like("%"+m2+"%")).all()    
-            for user in users:
-                name.append(user.f4)
-                genre.append(user.f5)
-                site.append(user.f2)
-                url_name.append(user.f3)
-                th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
-        else:    
-            
-            
+            if(m4[0]==""):
+                users =session.query(User).filter(User.f4.like("%"+m4[1]+"%")).filter(User.f4.like("%"+"mrs."+"%")).all()    
+                for user in users:
+                    name.append(user.f4)
+                    genre.append(user.f5)
+                    site.append(user.f2)
+                    url_name.append(user.f3)
+                    th.append(user.f4+"#"+user.f5+"#"+user.f2+"#"+user.f3)
+        if (counter!=0) :   
             users =session.query(User).filter(User.f4.like("%"+m+"%")).all()    
             for user in users:
                 name.append(user.f4)
