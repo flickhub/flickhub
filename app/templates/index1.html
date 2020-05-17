@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- Bootstrap core CSS --><title>FlickHub</title>
+	<link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<!-- Custom styles for this template -->
+  
+    
+  </head>
+  <style>
+html {
+  height: 100%;}
+body {
+  min-height: 100%;position: relative;
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow:auto;
+  line-height:4.7vh;
+  }
+div.sp{margin-bottom:4%;}
+img.d{float:left;width:10%;height:5%;margin-top:2%;margin-left:4%;}
+input.into{width:65%;margin-top:1.5%;margin-left:1%;border-radius:1.5vh;border-color:black;}
+
+div.ch{margin-left:24%;}
+div.card{height: 20rem; width: 15rem; margin: 10px;}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+h5.card-title{font-size:15px;}
+img.ideaa{height:120px; width:120px;padding-top: 10px;}
+
+
+
+
+@media screen and (max-width: 880px){
+html {
+  height: 100%;}
+body {
+  min-height: 100%;position: relative;
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow:auto;
+  line-height:3.2vh;
+  }
+.row1{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+a.btn-primary{font-size:1.3vh;margin-bottom:0;
+    padding-bottom: 0px;
+    border-bottom-width: 0px;
+    margin-bottom: 0px;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1vh;
+}
+
+
+img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
+input.into{width:90%;margin-top:1.5%;margin-left:4%;border-radius:1.5vh;display:block;border-color:black;margin-bottom:0}
+
+
+div.card{height:23vh; width: 8rem; }
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
+div.ch{margin-left:8vw;}
+div.container{padding:5%}
+}
+</style>
+  <body  style="margin-bottom:10px;">
+	 <!-- Navigation -->
+ 
+  
+<div class="sp">
+
+<img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" >
+<form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form>
+
+</div>		  
+				
+			<div class="row">
+			<div class="col-12" >
+			</div>
+			</div>
+	
+		 <!-- END COLORLIB-ASIDE -->
+		
+			<div class="container">
+						<div class="row row1">
+								
+							{%for i in range(le)%}
+							
+									<div class="column"  >
+									<div class="card " style="  background-color:	#F8F8F8; " >
+									  <div class="text-center">
+									  <img class="ideaa" src="static/image/{{ie[i]}}"  >
+									    <div class="card-body"> 
+										<h5 class="card-title">{{nam[i]}}</h5>
+										</div >
+										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1%">
+										<p class="card-text"style="margin-bottom:0">Genre-{{g[i]}}</p>
+										<a href="{{u[i]}}" target="_blank" class="align-self-end btn btn-primary " >Click Here</a>
+									  </div>
+									  </div>
+									</div>
+								</div>
+							{%endfor%}
+								
+						</div>
+						
+							<!-- END-->
+			    		
+			</div>	
+			
+
+
+
+
+  <!-- loader -->
+   <style>
+.footer{
+ position: absolute;
+ bottom: 0;
+ line-height:3vh;
+ margin-left:1vw;
+ margin-bottom:2vh;
+ text-align: center;
+ width: 98%;
+}
+</style>
+ 
+	<div class="row" style="width:80%;">
+			<div class="col-6" >
+			<h4 style="margin-top:20vh;"></h4>
+			</div>
+			</div>
+	
+  <div class="footer">
+    
+	
+      <div class="row" style="margin:0">
+        <div class="col-lg-6 h-100 text-center text-lg-left">
+          <ol class="list-inline mb-2" >
+            <li class="list-inline-item">
+              <a href="/about" style="color:white;">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="/contact" style="color:white;">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            </ol>
+          <p class="text-muted small mb-4 mb-lg-0" >&copy; FlickHub 2020. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ol class="list-inline mb-0" >
+            <li class="list-inline-item mr-3">
+              <a href="https://www.facebook.com/flickhubin-109094274139038/"target="_blank" style="color:white;">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="https://twitter.com/flickhub_in" target="_blank"style="color:white;">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/flickhub.in/"target="_blank" style="color:white;">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+ 
+  </div>
+  
+  
+  
+<script>
+function dropdownMenu(){
+var x=document.getElementById("dropdownClick");
+if (x.className==="topnav"){
+x.className +="-responsive";
+}
+else {
+x.className="topnav";}
+
+}
+
+</script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/scrollax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/google-map.js') }}"></script>
+  <script src="{{ url_for('static', filename='search-page/js/main.js') }}"></script>
+    
+  </body>
+
+ 
+</html>
