@@ -3,7 +3,7 @@ from db_initiate import see
 app = Flask(__name__)    
 @app.route("/",methods=["GET","POST"])
 def home():
-    return render_template('index2.html')  
+    return render_template('index.html')  
 @app.route("/submit",methods=["GET","POST"])
 def submit():
         mvname=request.form["mv_name"]
@@ -26,8 +26,8 @@ def about():
 def contact():
     return render_template('contact.html')
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 
