@@ -80,7 +80,7 @@ a.btn-primary{font-size:1.3vh;margin-bottom:0;
 
 img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
 div.input-group{width:90%;height:10%;}
-input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
+input.form-control{margin-top:1.5%;margin-left:5%;border-radius:1.5vh;}
 div.input-group-append{margin-top:1.5%;}
 
 button.btn-secondary{background-color:orange;border-color:orange;}
@@ -105,7 +105,7 @@ div.container{padding:5%}
 <a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
 		<form method="POST" action="/submit">
 			<div class="input-group">
-			<input type="text" class="form-control" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}">
+			<input type="text" class="form-control" placeholder="&nbsp Search with a keyword"  name="mv_name" value="{{nam1}}">
 			<div class="input-group-append">
 			<button class="btn btn-secondary" type="submit">
 			<i class="fa fa-search"></i>
