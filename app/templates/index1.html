@@ -29,7 +29,12 @@ body {
   }
 div.sp{margin-bottom:4%;}
 img.d{float:left;width:10%;height:5%;margin-top:2%;margin-left:4%;}
-input.into{width:65%;margin-top:1.5%;margin-left:1%;border-radius:1.5vh;border-color:black;}
+div.input-group{width:72%;}
+input.form-control{margin-top:2%;margin-left:1%;}
+div.input-group-append{margin-top:2%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
+
 
 div.ch{margin-left:24%;}
 div.card{height: 20rem; width: 15rem; margin: 10px;}
@@ -74,7 +79,13 @@ a.btn-primary{font-size:1.3vh;margin-bottom:0;
 
 
 img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
-input.into{width:90%;margin-top:1.5%;margin-left:4%;border-radius:1.5vh;display:block;border-color:black;margin-bottom:0}
+div.input-group{width:90%;height:10%;}
+input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
+div.input-group-append{margin-top:1.5%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
+
+
 
 
 div.card{height:23vh; width: 8rem; }
@@ -91,11 +102,18 @@ div.container{padding:5%}
   
 <div class="sp">
 
-<img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" >
-<form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form>
-
-</div>		  
-				
+<a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
+		<form method="POST" action="/submit">
+			<div class="input-group">
+			<input type="text" class="form-control" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}">
+			<div class="input-group-append">
+			<button class="btn btn-secondary" type="submit">
+			<i class="fa fa-search"></i>
+			</button>
+			</div>
+			</div>
+		</form>	  
+</div>						
 			<div class="row">
 			<div class="col-12" >
 			</div>
@@ -116,7 +134,7 @@ div.container{padding:5%}
 										<h5 class="card-title">{{nam[i]}}</h5>
 										</div >
 										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1%">
-										<p class="card-text"style="margin-bottom:0">Genre-{{g[i]}}</p>
+										<p class="card-text"style="margin-bottom:1%">Genre-{{g[i]}}</p>
 										<a href="{{u[i]}}" target="_blank" class="align-self-end btn btn-primary " >Click Here</a>
 									  </div>
 									  </div>
