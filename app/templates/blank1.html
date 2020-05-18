@@ -29,7 +29,12 @@ body {
   }
 div.sp{margin-bottom:4%;}
 img.d{float:left;width:10%;height:5%;margin-top:2%;margin-left:4%;}
-input.into{width:65%;margin-top:1.5%;margin-left:1%;border-radius:1.5vh;border-color:black;}
+div.input-group{width:72%;}
+input.form-control{margin-top:2%;margin-left:1%;}
+div.input-group-append{margin-top:2%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
+
 div.col-12 h1{text-align:center; color:white; margin-top:10%}
 
 
@@ -51,7 +56,11 @@ body {
 
 
 img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
-input.into{width:90%;margin-top:1.5%;margin-left:4%;border-radius:1.5vh;display:block;border-color:black;margin-bottom:0}
+div.input-group{width:90%;height:10%;}
+input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
+div.input-group-append{margin-top:1.5%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
 div.col-12 h1{text-align:center; color:white; margin-top:60%;font-size:90%}
 
 
@@ -63,12 +72,22 @@ div.container{padding:5%}
 	 <!-- Navigation -->
  
   
+ 
 <div class="sp">
 
-<img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" >
-<form method="POST" action="/submit"><input type="text" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}" class="into"> </form>
-
-</div>		  
+<a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
+		<form method="POST" action="/submit">
+			<div class="input-group">
+			<input type="text" class="form-control" placeholder="&nbsp &nbsp &nbsp Search with a keyword"  name="mv_name" value="  {{nam1}}">
+			<div class="input-group-append">
+			<button class="btn btn-secondary" type="submit">
+			<i class="fa fa-search"></i>
+			</button>
+			</div>
+			</div>
+		</form>	  
+</div>						
+			  
 				
 			<div class="row">
 			<div class="col-12" >
