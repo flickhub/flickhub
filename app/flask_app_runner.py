@@ -18,7 +18,7 @@ def submit():
             else:
                 return render_template('blank1.html',nam1=m)
         else:
-            return render_template('blank1.html',nam1=m)
+            return render_template('blank1.html')
 @app.route("/about")
 def about():
     return render_template('about.html')  
