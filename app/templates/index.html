@@ -18,101 +18,36 @@
   <style>
 
 span{
- font-size:15vh; font-weight: bold;}
-span.idea1{display:block; color:white;font-size:4vh;font-weight:300;}
+ font-size:605%; font-weight: bold;}
+span.idea1{display:block; color:white;font-size:150%;font-weight:300;}
 div.containeri{margin-top:10%;}
-input.form-control-lg{width:45vw;margin-left:2.5vw;height:4.7vh;font-size:2vh;margin-top:2vh;border-radius:1.5vh;}
-button.btn-lg{width:5vw;margin-left:5.2vw;height:4.7vh;font-size:2vh;margin-top:2vh;padding:0.1vh ;display:block;border-radius:1.5vh;font-weight:700; background-color:darkorange;}
-img.d-inline-block{width:5vw ;height:3vh;}
+input.form-control-lg{width:110%;margin-left:4%;height:70%;font-size:80%;margin-top:3%;border-radius:1.5vh;}
+button.btn-lg{width:40%;margin-left:40%;height:70%;font-size:2vh;margin-top:9%;padding:1% ;display:block;border-radius:1.5vh;font-weight:700;border:none; background-color:darkorange;}
 body {
   background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
-  line-height:4.7vh;
-  }
-
-nav{
-width: 100%;
-margin: 0;
-}
-
-ol.mb-0{right:0}
-
-nav ol{
-background-color:transparent;
-overflow: hidden;
-/*when browser collapses in mobile then no shrinking and no scrolling*/
-margin: 0;
-padding: 0;
-}
-ol.topnav li{
-list-style: none;
-float: left;
-}
-ol.topnav li.topnav-right {
-list-style: none;
-float: right;
-}
-ol.topnav li a {
-display: block;
-text-decoration: none;
-min-height: 10%;
-text-align:right;
+  line-height:200%;}
 
 
-font-size:2.5vh;
-margin-right:2vw;
-font-family:"Trebuchet MS", Helvetica, sans-serif;
-}
-
-ol.topnav li.dropdownIcon {
-display: none;
-}
 h4{font-weight:200;}
 div.it{display:none;}
-div.col-6{ margin-top:4vh;margin-left:24vw}
-@media screen and (max-width: 880px){
-body{ line-height:3vh;
-  }
-ol.topnav li:not(:nth-child(1)){
-display: none;
-}
-ol.topnav li.dropdownIcon {
-display: block;
-float: right;
-}
-ol.topnav-responsive li.dropdownIcon {
-position: absolute;
-top: 3px;
-right: 3px;
-}
-ol.topnav-responsive{
-position: relative;
+div.col-6{ margin-top:2%;margin-left:24%}
 
-}
-ol.topnav-responsive li:not(:nth-child(1)){
 
-display: block;
-text-decoration: none;
-text-align:right;
 
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li a:not(:nth-child(1)){
-display:None;
 
-}
-span{
-font-size:9vh;padding:0;font-weight:bold}
-img.d-inline-block{width:25vw ;height:3vh;}
+@media screen and (max-width: 768px){
+
+body{ line-height:80%;}
+span{font-size:350%;padding:0;font-weight:bold}
 
 
 input.form-control{
-width:95%;height:45%;margin-bottom:0;font-size:13px;border-radius:1vh;}
-button.btn-lg{width:15vw;height:3.7vh;font-size:1.9vh;margin:auto;display:block;border-radius:1vh;background-color: orange;}
+width:95%;height:45%;font-size:85%;border-radius:1vh;}
+button.btn-lg{width:10%;height:145%;font-size:40%;display:block;border-radius:1vh;background-color: orange;margin-top:0;padding:0.1%;margin-left:45%;border:none; }
 ol.mb-2,p.text-muted{font-size:10px;}
 ol.mb-0{font-size:8px;}
 span.idea1{display:block; color:white;font-size:2vh;font-weight:400;margin-top:1vh}
@@ -160,7 +95,7 @@ div.col-6{display:none;}
 .footer{
  position: absolute;
  bottom: 0;
-line-height:3vh;
+ line-height:3vh;
  margin-left:1vw;
  margin-bottom:2vh;
  text-align: center;
