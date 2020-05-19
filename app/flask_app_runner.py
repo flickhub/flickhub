@@ -10,7 +10,7 @@ def submit():
         if(mvname!=""):
             print(mvname)
             m=mvname
-            
+            m=mvname.lstrip()
             #db search
             url_name3,img3,l,name3,genre3=see(m)
             if(len(name3)!=0):
