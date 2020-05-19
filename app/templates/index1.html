@@ -42,12 +42,14 @@ div.card{height: 140%; width: 15rem;}
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
+.con1{width:100%;padding: 4%;}
+.con{width:92%;margin: 0 auto;;}
 .row1{
 margin:0;
   padding:0;
-  width:93%;
+  
   display: flex;
-  margin-left:7%;
+  
   flex-direction: row;
   
 }
@@ -56,7 +58,7 @@ h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
 div.column{margin:5%;margin-top:7%; margin-left: 0.5%; margin-right: 0.5%;}
 p.card-text{margin-top:2%;margin-bottom:5%}
-a.btn-primary{margin-bottom: 4%;}
+a.btn-primary{margin-bottom: 10px;}
 h4{margin-top:80%}
 @media screen and (max-width: 980px){
 html {
@@ -71,15 +73,15 @@ body {
   
   }
 .row1{
-margin:0;
+  margin:0;
   padding:0;
-  width:95%;
+  width:100%;
   display: flex;
-  margin-left:5%;
+  
   flex-direction: row;
 }
 a.btn-primary{font-size:1.3vh;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     border-bottom-width: 0px;
     margin-bottom: 1%;
 }
@@ -100,12 +102,67 @@ button.btn-secondary{background-color:orange;border-color:orange;}
 
 
 
-div.card{height: 160%; width: 8rem; }
+div.card{height: 160%; width: 8rem;}
 h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
 img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
 p.card-text{font-size:9px;margin-top:2%;margin-bottom:0}
 div.ch{margin-left:24%;}
-div.column{margin:4%;margin-top:20%;}
+
+.con1{width:100%;padding: 8%;}
+.con{width:84%;margin: 0 auto;;}
+
+
+
+h4{margin-top:180%}
+}
+
+
+@media screen and (max-width: 801px){
+html {
+  height: 100%;}
+body {
+  min-height: 100%;position: relative;
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow:auto;
+  
+  }
+
+a.btn-primary{font-size:1.3vh;
+    padding-bottom: 10px;
+    border-bottom-width: 0px;
+    margin-bottom: 1%;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1vh;
+}
+
+
+img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
+div.input-group{width:90%;height:10%;}
+input.form-control{margin-top:1.5%;margin-left:5%;border-radius:1.5vh;}
+div.input-group-append{margin-top:1.5%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
+
+
+
+
+div.card{height: 160%; width: 8rem;}
+h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
+img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
+p.card-text{font-size:9px;margin-top:2%;margin-bottom:0}
+div.ch{margin-left:24%;}
+
+.con1{width:100%;padding: 8%;}
+.con{width:84%;margin: 0 auto;;}
+div.column{margin-bottom:20%}
+
+
 h4{margin-top:180%}
 }
 </style>
@@ -134,7 +191,7 @@ h4{margin-top:180%}
 	
 		 <!-- END COLORLIB-ASIDE -->
 		
-			
+			<div class="con1">
 					<div class="con">
 						<div class="row row1">
 								
@@ -162,7 +219,7 @@ h4{margin-top:180%}
 			    		
 					</div>
 			
-
+			</div>
 
 
 
