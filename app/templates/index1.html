@@ -36,20 +36,25 @@ div.input-group-append{margin-top:2%;}
 button.btn-secondary{background-color:orange;border-color:orange;}
 
 
-div.ch{margin-left:24%;}
-div.card{height: 20rem; width: 15rem; margin: 10px;}
+div.ch{margin-left:25%;}
+div.card{height: 140%; width: 15rem;}
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1rem;
+}
+.row1{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  
 }
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
+div.column{margin:5%;}
+p.card-text{margin-top:2%;margin-bottom:5%}
+a.btn-primary{margin-bottom: 4%;}
 
-
-
-
-@media screen and (max-width: 880px){
+@media screen and (max-width: 980px){
 html {
   height: 100%;}
 body {
@@ -59,17 +64,17 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
-  line-height:3.2vh;
+  
   }
 .row1{
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-a.btn-primary{font-size:1.3vh;margin-bottom:0;
+a.btn-primary{font-size:1.3vh;
     padding-bottom: 0px;
     border-bottom-width: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 1%;
 }
 .card-body {
     -ms-flex: 1 1 auto;
@@ -88,12 +93,12 @@ button.btn-secondary{background-color:orange;border-color:orange;}
 
 
 
-div.card{height:23vh; width: 8rem; }
+div.card{height: 160%; width: 8rem; }
 h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
 img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
-p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
-div.ch{margin-left:8vw;}
-div.container{padding:5%}
+p.card-text{font-size:9px;margin-top:2%;margin-bottom:0}
+div.ch{margin-left:24%;}
+div.column{margin:7%;margin-top:12%}
 }
 </style>
   <body  style="margin-bottom:10px;">
@@ -121,7 +126,8 @@ div.container{padding:5%}
 	
 		 <!-- END COLORLIB-ASIDE -->
 		
-			<div class="container">
+			<div class="container" >
+
 						<div class="row row1">
 								
 							{%for i in range(le)%}
@@ -133,9 +139,9 @@ div.container{padding:5%}
 									    <div class="card-body"> 
 										<h5 class="card-title">{{nam[i]}}</h5>
 										</div >
-										<div class="ch" style=" position: absolute; bottom: 0;margin-bottom:1%">
-										<p class="card-text"style="margin-bottom:1%">Genre-{{g[i]}}</p>
-										<a href="{{u[i]}}" target="_blank" class="align-self-end btn btn-primary " >Click Here</a>
+										<div class="ch" style=" position: absolute; bottom: 0;">
+										<p class="card-text">Genre-{{g[i]}}</p>
+										<a href="{{u[i]}}" target="_blank" class="btn btn-primary " >Click Here</a>
 									  </div>
 									  </div>
 									</div>
