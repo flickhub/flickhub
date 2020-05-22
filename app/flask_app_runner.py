@@ -6,11 +6,16 @@ def home():
     return render_template('index.html')  
 @app.route("/submit",methods=["GET","POST"])
 def submit():
+        count=0
         mvname=request.form["mv_name"]
-        if(mvname!=""):
+        for i in mvname:
+            if(i==' '):
+                count=count+1
+        l=len(mvname)        
+        if(mvname!="" and l!=count):
             print(mvname)
-            m=mvname
             m=mvname.lstrip()
+            
             #db search
             url_name3,img3,l,name3,genre3=see(m)
             if(len(name3)!=0):
@@ -26,8 +31,8 @@ def about():
 def contact():
     return render_template('contact.html')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+app.run(debug=True)
 
 
 
