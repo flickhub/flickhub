@@ -52,6 +52,8 @@ label{
   text-decoration: none;
   margin: 5px 2px;
 }
+h2{font-size:120%;}
+
 @media screen and (max-width: 880px){
 html {
   height: 100%;}
@@ -69,14 +71,21 @@ body {
 
 img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
 div.input-group{width:90%;height:10%;}
-input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
+input.r{margin-top:1.5%;margin-left:6%;border-radius:1.5vh;}
 div.input-group-append{margin-top:1.5%;}
 
 button.btn-secondary{background-color:orange;border-color:orange;}
 div.col-12 h1{text-align:center; color:white; margin-top:60%;font-size:90%}
+input.form-control{border-radius:1.5vh;}
 
-
-
+.s{
+  
+  font-size: 70%;
+  
+}
+h2{  font-size: 80%;
+  
+}
 div.container{padding:5%}
 }
 .bd-placeholder-img {
@@ -107,7 +116,7 @@ div.container{padding:5%}
 <a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
 		<form method="POST" action="/submit">
 			<div class="input-group">
-			<input type="text" class="form-control" placeholder=" Search with a keyword"  name="mv_name" value="  {{nam1}}">
+			<input type="text" class="form-control r" placeholder=" Search with a keyword"  name="mv_name" value="  {{nam1}}">
 			<div class="input-group-append">
 			<button class="btn btn-secondary" type="submit">
 			<i class="fa fa-search"></i>
@@ -167,37 +176,23 @@ div.container{padding:5%}
           <label for="address2">&nbsp Tell us what you think- (Reviews, messages)<span class="text-muted">(Optional)</span></label>
           <input style="margin-top:0;"  type="text" class="form-control" id="address2" placeholder="">
         </div>
-
+		<hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block " type="submit" style="Color:#FFFFFF;border-color:black;background-color:darkorange;border-radius:1.5vh;">Submit</button>
+      <br>
 		<div class="mb-3">
           <label for="address">&nbsp Connect:-  </label>
 			<br>
-			<a href="#" class="fa fa-facebook s"></a>
-			<a href="#" class="fa fa-twitter s"></a>
-			<a href="#" class="fa fa-google s"></a>
-			<a href="#" class="fa fa-linkedin s"></a>
-			<a href="#" class="fa fa-youtube s"></a>
-			<a href="#" class="fa fa-instagram s"></a>
-			<a href="#" class="fa fa-pinterest s"></a>
-			<a href="#" class="fa fa-snapchat-ghost s"></a>
-			<a href="#" class="fa fa-skype s"></a>
-			<a href="#" class="fa fa-android s"></a>
-			<a href="#" class="fa fa-dribbble s"></a>
-			<a href="#" class="fa fa-vimeo s"></a>
-			<a href="#" class="fa fa-tumblr s"></a>
-			<a href="#" class="fa fa-vine s"></a>
-			<a href="#" class="fa fa-foursquare s"></a>
-			<a href="#" class="fa fa-stumbleupon s"></a>
-			<a href="#" class="fa fa-flickr s"></a>
-			<a href="#" class="fa fa-yahoo s"></a>
-			<a href="#" class="fa fa-reddit s"></a>
-			<a href="#" class="fa fa-rss s"></a>
+			<a href="#" class="fa fa-facebook s"></a><h2 style="display:inline">Facebook</h2>
+			
+			<a href="#" class="fa fa-twitter s"></a><h2 style="display:inline"> Twitter</h2>
+			
+			<a href="#" class="fa fa-instagram s"></a><h2 style="display:inline"> Instagram</h2>
+			
         </div>
 
         
         
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block " type="submit" style="Color:#FFFFFF;border-color:black;background-color:darkorange;">Submit</button>
-      </form>
+        </form>
     </div>
   </div>
 
