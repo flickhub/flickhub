@@ -36,9 +36,9 @@ div.input-group-append{margin-top:2%;}
 button.btn-secondary{background-color:orange;border-color:orange;}
 
 div.col-12 h1{text-align:center; color:white;}
+div.y{margin:10%;}
 
-
-
+p{font-size:180%; }
 
 @media screen and (max-width: 880px){
 html {
@@ -61,10 +61,10 @@ input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
 div.input-group-append{margin-top:1.5%;}
 
 button.btn-secondary{background-color:orange;border-color:orange;}
-div.col-12 h1{text-align:center; color:white;font-size:90%}
-
-
-
+div.col-12 {text-align:center; color:white;font-size:90%}
+div.row{ margin-top:50%;}
+h1.t{font-size:160%;}
+p{font-size:80%;}
 div.container{padding:5%}
 }
 </style>
@@ -78,11 +78,6 @@ div.container{padding:5%}
 <a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
 		<form method="POST" action="/submit">
 			<div class="input-group">
-			<input type="text" class="form-control" placeholder=" Search with a keyword"  name="mv_name" value="  {{nam1}}">
-			<div class="input-group-append">
-			<button class="btn btn-secondary" type="submit">
-			<i class="fa fa-search"></i>
-			</button>
 			</div>
 			</div>
 		</form>	  
@@ -91,9 +86,11 @@ div.container{padding:5%}
 
   <!-- Masthead -->
 
- <div class="row" style="color:white; margin:1.2rem;">
+ <div class="row y" style="color:white;">
  <div class="col-12">
- <h1 style="text-align:center">Contact :- </h1>
+ <h1 style="text-align:center" class="t">Contact</h1>
+ <br>
+
  <p style="text-align:center"> 
 Feel free to reach us anytime, we are super friendly and always ready to answer your questions. 
 <br>
