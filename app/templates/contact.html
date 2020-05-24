@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167287587-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-167287587-1');
-</script>
+<head>
     <meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Bootstrap core CSS --><title>FlickHub</title>
-	<link rel="icon" href=" {{ url_for('static', filename='image/logo4.jpg')}}" type="image/gif" sizes="16x16">
+	<link rel="icon" href=" {{ url_for('static', filename='image/logo3.jpg')}}" type="image/gif" sizes="16x16">
   <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template -->
   <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -34,174 +25,95 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow:auto;
+  line-height:4.7vh;
   }
-div.card{height: 20rem; width: 15rem; margin: 10px;}
-h5.card-title{font-size:15px;}
-img.d-inline-block{width:10vw ;height:3vh;}
-img.ideaa{height:120px; width:120px;padding-top: 10px;}
-nav ol{
-background-color:transparent;
-overflow: hidden;
-/*when browser collapses in mobile then no shrinking and no scrolling*/
-margin: 0;
-padding: 0;
-}
-ol.topnav li{
-list-style: none;
-float: left;
-}
-ol.topnav li.topnav-right {
-list-style: none;
-float: right;
-}
-ol.topnav li.topnav-right1 {
-list-style: none;
-float: right;
-}
-ol.topnav li.myonly {
-list-style: none;
-float: right;
-}
-ol.topnav li a {
-display: block;
-text-decoration: none;
-min-height: 10%;
-text-align:right;
+div.sp{margin-bottom:3%;}
+img.d{float:left;width:10%;height:5%;margin-top:2%;margin-left:4%;}
+div.input-group{width:72%;}
+input.form-control{margin-top:2%;margin-left:1%;}
+div.input-group-append{margin-top:2%;}
+
+button.btn-secondary{background-color:orange;border-color:orange;}
+
+div.col-12 h1{text-align:center; color:white;}
 
 
-font-size:2.5vh;
-margin-right:2vw;
-font-family:"Trebuchet MS", Helvetica, sans-serif;
-}
 
 
-ol.topnav li.dropdownIcon {
-display: none;
-}
-li.my{
-display: none;
-}
-p{font-size:1.5rem;}
 @media screen and (max-width: 880px){
 html {
   height: 100%;}
+body {
+  min-height: 100%;position: relative;
+  background-image: url("{{ url_for('static', filename='image/38.jpg')}}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow:auto;
+  line-height:3.2vh;
+  }
 
-li.my{
-display: block;
-}
-ol.topnav-responsive li.myonly {
-display:none;
-}
-ol.topnav li:not(:nth-child(1)){
-display: none;
-}
-ol.topnav li.dropdownIcon {
-display: block;
-float: right;
-}
-ol.topnav-responsive li.dropdownIcon {
-position: absolute;
-top: 3px;
-right: 3px;
-padding:5px;
 
-}
-ol.topnav-responsive{
-position: relative;
 
-}
-ol.topnav-responsive li.myonly1{
-display: block;
-float: left}
+img.d{float:left;width:20%;height:15%;margin-top:4%;margin-left:40%;display:block;margin-bottom:2%}
+div.input-group{width:90%;height:10%;}
+input.form-control{margin-top:1.5%;margin-left:4%;border-radius:1.5vh;}
+div.input-group-append{margin-top:1.5%;}
 
-ol.topnav-responsive li.topnav-right1{
-margin-top:30px;
-display: block;
-text-decoration: none;
-text-align:right;
-text-transform: uppercase;
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li.topnav-right{
+button.btn-secondary{background-color:orange;border-color:orange;}
+div.col-12 h1{text-align:center; color:white;font-size:90%}
 
-display: block;
-text-decoration: none;
-text-align:right;
-text-transform: uppercase;
-font-size:15px;
-padding:3px
-}
-ol.topnav-responsive li a:not(:nth-child(1)){
-display:None;
 
-}
 
-.row1{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-img.d-inline-block{width:30vw ;height:3vh;}
-span{
-font-size:45px;margin:0;font-weight:bold;}
-input.form-control{
-width:80%;height:50%;margin:auto;margin-bottom:0}
-button.btn{
-width:20%;height:70%;margin-left:auto;margin-right:auto;font-size:10px;padding-top:0}
-ol.mb-2,p.text-muted{font-size:10px;}
-ol.mb-0{font-size:8px;}
-li.dropdownIcon input{
-margin:2rem;}
-div.card{height: 12rem; width: 8rem; margin: 10px;}
-h5.card-title{font-size:10px;margin-top:0;margin-bottom:0}
-img.ideaa{height:60px; width:60px;margin-bottom:0;padding-top: 10px;}
-p.card-text{font-size:9px;margin-top:0;margin-bottom:0}
-a.btn-primary{font-size:7px;margin-top:0;margin-bottom:0}
-p{font-size:1rem;}
+div.container{padding:5%}
 }
 </style>
-  <body>
+  <body  style="margin-bottom:10px;">
 	 <!-- Navigation -->
  
   
-   <nav>
-			
-        <ol class="topnav" id="dropdownClick">
-            <li><a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='image/logo2.jpg')}}"  class="d-inline-block align-top " alt="" >  </a></li>
+ 
+<div class="sp">
 
-			<li class="topnav-right"><a href="/about" style="color:white; ">About</a></li>
-            <li class="topnav-right"><a href="/contact" style="color:white; ">Contact</a></li>
-            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
-        </ol>
-    </nav>
-			  
-
+<a href="/"><img src="{{ url_for('static', filename='image/logo4.jpg')}}"  class="d" alt="" ></a>
+		<form method="POST" action="/submit">
+			<div class="input-group">
+			<input type="text" class="form-control" placeholder=" Search with a keyword"  name="mv_name" value="  {{nam1}}">
+			<div class="input-group-append">
+			<button class="btn btn-secondary" type="submit">
+			<i class="fa fa-search"></i>
+			</button>
+			</div>
+			</div>
+		</form>	  
+</div>						
 
 
   <!-- Masthead -->
+
  <div class="row" style="color:white; margin:1.2rem;">
  <div class="col-12">
- <h1 style="text-align:center"></h1>
- <p >
- </p>
- <p >
- </p>
- <p >
-<p ></p>
+ <h1 style="text-align:center">Contact :- </h1>
+ <p style="text-align:center"> 
+Feel free to reach us anytime, we are super friendly and always ready to answer your questions. 
+<br>
+
+Mail us at - info.flickhub@gmail.com
+<br>
+Call/Whatsapp - 8989882529
+</p>
  </div>
  </div>
  
  
  
  
- 
-<!--footer-->
- <style>
+  <!-- loader -->
+   <style>
 .footer{
  position: absolute;
  bottom: 0;
-line-height:3vh;
+ line-height:3vh;
  margin-left:1vw;
  margin-bottom:2vh;
  text-align: center;
@@ -211,16 +123,16 @@ line-height:3vh;
  
 	<div class="row" style="width:80%;">
 			<div class="col-6" >
-			<h4 style="margin:10rem;"></h4>
+			<h4 style="margin-top:20vh;"></h4>
 			</div>
 			</div>
 	
   <div class="footer">
     
 	
-      <div class="row" >
+      <div class="row" style="margin:0">
         <div class="col-lg-6 h-100 text-center text-lg-left">
-          <ol class="list-inline mb-2">
+          <ol class="list-inline mb-2" >
             <li class="list-inline-item">
               <a href="/about" style="color:white;">About</a>
             </li>
@@ -228,23 +140,28 @@ line-height:3vh;
             <li class="list-inline-item">
               <a href="/contact" style="color:white;">Contact</a>
             </li>
+            <li class="list-inline-item">&sdot;</li>
+			<li class="list-inline-item">
+              <a href="/feedback" style="color:white;">Feedback</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
             </ol>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; FlickHub 2020. All Rights Reserved.</p>
+          <p class="text-muted small mb-4 mb-lg-0" >&copy; FlickHub 2020. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ol class="list-inline mb-0" >
             <li class="list-inline-item mr-3">
-              <a href="" style="color:white;">
+              <a href="https://www.facebook.com/flickhubin-109094274139038/"target="_blank" style="color:white;">
                 <i class="fab fa-facebook fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item mr-3">
-              <a href="" style="color:white;">
+              <a href="https://twitter.com/flickhub_in" target="_blank"style="color:white;">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="" style="color:white;">
+              <a href="https://www.instagram.com/flickhub.in/"target="_blank" style="color:white;">
                 <i class="fab fa-instagram fa-2x fa-fw"></i>
               </a>
             </li>
@@ -253,10 +170,8 @@ line-height:3vh;
       </div>
  
   </div>
-
-  <!-- loader -->
-
-  <!-- loader -->
+  
+  
   
 <script>
 function dropdownMenu(){
@@ -267,7 +182,9 @@ x.className +="-responsive";
 else {
 x.className="topnav";}
 
-}</script>
+}
+
+</script>
   <script src="{{ url_for('static', filename='search-page/js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/jquery-migrate-3.0.1.min.js') }}"></script>
   <script src="{{ url_for('static', filename='search-page/js/popper.min.js') }}"></script>
@@ -284,4 +201,8 @@ x.className="topnav";}
   <script src="{{ url_for('static', filename='search-page/js/main.js') }}"></script>
     
   </body>
+
+ 
 </html>
+
+
