@@ -17,9 +17,10 @@ def submit():
             m=mvname.lstrip()
             
             #db search
-            url_name3,img3,l,name3,genre3=see(m)
+            url_name3,img3,l,name3,genre3,im3,rate3,yr3,vt3,gen3,cst3,pl3=see(m)
             if(len(name3)!=0):
-                return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=genre3,nam1=m)    
+                
+                return render_template('index1.html',u=url_name3,ie=img3,le=l,nam=name3,g=gen3,nam1=m,im=im3,rate=rate3,year=yr3,vote=vt3,cast=cst3,plat=pl3)    
             else:
                 return render_template('blank1.html',nam1=m)
         else:
@@ -30,14 +31,11 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
-
 @app.route("/feedback")
 def feedback():
     return render_template('feedback.html')
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+app.run(debug=True)
 
 
 
