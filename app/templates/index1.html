@@ -36,21 +36,64 @@ div.input-group-append{margin-top:2%;}
 button.btn-secondary{background-color:orange;border-color:orange;}
 
 
-div.ch{margin-left:25%;}
-div.card{height: 140%; width: 15rem;}
-.card:hover {
-  transform: scale(1.05);
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 150px;
+ 
 }
-.card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  
 }
+
+.flip-card:hover .flip-card-inner {
+  
+	z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: rotateY(180deg) scale(1.4,2) 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: rotateY(180deg) scale(1.4,2) ;   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: rotateY(180deg) scale(1.4,2);
+    transition: all 200ms ease-in;
+    transform: rotateY(180deg) scale(1.4,2);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color:currentcolor;
+ 
+}
+
+.flip-card-back {
+  background-color: currentcolor;
+  
+  transform: rotateY(180deg);
+}
+
+
+
+
 .con1{width:100%;padding: 4%;padding-top:0;}
 .con{width:92%;margin: 0 auto;}
 .row1{
 margin:0;
   padding:0;
-  
+  padding-top: 5%;
   display: flex;
   justify-content:space-evenly;
  
@@ -60,7 +103,7 @@ margin:0;
 
 h5.card-title{font-size:15px;}
 img.ideaa{height:120px; width:120px;padding-top: 10px;}
-div.column{margin:5%;margin-top:7%; margin-left: 1%; margin-right: 1%;}
+div.column{margin:1%; margin-left: 1%; margin-right: 1%;}
 p.card-text{margin-top:2%;margin-bottom:5%}
 a.btn-primary{margin-bottom: 10px;}
 h4{margin-top:80%}
@@ -203,21 +246,44 @@ h4{margin-top:180%}
 						<div class="row row1">
 								
 							{%for i in range(le)%}
-							
-									<div class="column"  >
-									<div class="card " style="  background-color:	#F8F8F8; " >
-									  <div class="text-center">
-									  <img class="ideaa" src="static/image/{{ie[i]}}"  >
-									    <div class="card-body"> 
-										<h5 class="card-title">{{nam[i]}}</h5>
-										</div >
-										<div class="ch" style=" position: absolute; bottom: 0;">
-										<p class="card-text">Genre-{{g[i]}}</p>
-										<a href="{{u[i]}}" target="_blank" class="btn btn-primary " >Click Here</a>
-									  </div>
+									<div class="column">
+									<div class="flip-card">
+									  <div class="flip-card-inner">
+										<div class="flip-card-front">
+										<div class="row" style="margin:0;width: 100%;height: 100%;">
+										<div class="col-4" style="padding-right: 2%;padding-left: 0px;height: 70%;width: 100%;">
+										  <img src="{{im[i]}}" alt="" style="width:100%;height:100%;">
+										</div>
+										<div class="col-8" style="padding-left: 0px;padding-right: 0;height: 70%; padding-top: 2%;">
+										 <img src="static/image/{{ie[i]}}" alt="" style="width: 31%;height:30%;position: relative;vertical-align: top;">
+										  <p style="font-size: 65%;margin-bottom: 0px;color:white;line-height:110%; max-height: 35%;font-family:Verdana, Geneva, sans-serif;font-weight:200;overflow: hidden"> {{plat[i]}}</p>
+											<p style="font-size: 65%;margin-bottom: 0px;margin-top: 2%;color:white;line-height:110%;font-family:Verdana, Geneva, sans-serif;font-weight:200;">Genre {{g[i]}}</p>
+										
+										</div>
+										<div class="col-12">
+										<h2 style="font-size: 100%;color:white;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{nam[i]}}</h2>
+										<h2 style="font-size: 55%;color:white; line-height:2%">IMDb {{rate[i]}} {{year[i]}}</h2>
+										</div>
+										</div>
+										</div>
+										<div class="flip-card-back">
+										  <div class="row" style="margin:0;width: 100%;height: 100%;">
+										<div class="col-12"style="padding-left: 0px;padding-right: 0px;height: 70%;">
+										  <iframe class="video" style="width:100%;height:100%;" src="https://www.youtube.com/embed/ZZl5BrdHme0" frameborder="0" allow=" autoplay;" >
+										  </iframe>
+										</div>
+										<div class="col-12">
+											
+											<h2 style="font-size: 100%;color:white;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">Actors- {{cast[i]}}</h2>
+											<h2 style="font-size: 55%;color:white; line-height:2%">Votes {{vote[i]}}</h2>
+										
+										
+										</div>
+										</div>
 									  </div>
 									</div>
-								</div>
+									</div>
+								</div>	
 							{%endfor%}
 								
 						</div>
@@ -228,7 +294,7 @@ h4{margin-top:180%}
 			
 			</div>
 
-
+		
 
   <!-- loader -->
    <style>
@@ -249,10 +315,10 @@ h4{margin-top:180%}
 			</div>
 			</div>
 	
-  <div class="footer">
+ <div class="footer">
     
 	
-      <div class="row" style="margin:0">
+       <div class="row" style="margin:0">
         <div class="col-lg-6 h-100 text-center text-lg-left">
           <ol class="list-inline mb-2" >
             <li class="list-inline-item">
@@ -261,6 +327,10 @@ h4{margin-top:180%}
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="/contact" style="color:white;">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+			<li class="list-inline-item">
+              <a href="/feedback" style="color:white;">Feedback</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             </ol>
@@ -292,14 +362,14 @@ h4{margin-top:180%}
   
   
 <script>
-function dropdownMenu(){
-var x=document.getElementById("dropdownClick");
-if (x.className==="topnav"){
-x.className +="-responsive";
-}
-else {
-x.className="topnav";}
+var figure = $(".video").hover( hoverVideo, hideVideo );
 
+function hoverVideo(e) {  
+    $('video', this).get(0).play(); 
+}
+
+function hideVideo(e) {
+    $('video', this).get(0).pause(); 
 }
 
 </script>
