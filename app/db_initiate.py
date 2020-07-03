@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, MetaData, Table, Column, ForeignKey
 from sqlalchemy.dialects.mysql.base import VARCHAR, LONGTEXT, INTEGER
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-
+import sqlalchemy
 engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
 connection = engine.connect()
 
@@ -10,82 +10,35 @@ Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
 metadata = MetaData()
+# function to return key for any value 
+def get_key(val): 
+    for key, value in my_dict.items(): 
+         if val == value: 
+             return key 
+  
+    return "key doesn't exist"
 
-class User(Base):
-    __tablename__ = 'movies'
-    f1 = Column('idmovies', nullable=False,primary_key=True)
-    f2 = Column('movie', nullable=False)
-class User1(Base):
-    __tablename__ = 'movie_genre'
-    f1 = Column('id', nullable=False,primary_key=True)
-    f3 = Column('id_movie', nullable=False)
-    f4 = Column('id_genre', nullable=False)
-class User2(Base):
-    __tablename__ = 'genre'
-    f1 = Column('idgenre', nullable=False,primary_key=True)
-    f5 = Column('genre', nullable=False)
-class User3(Base):
-    __tablename__ = 'movie_url'
-    f1 = Column('id', nullable=False,primary_key=True)
-    f3 = Column('id_movie', nullable=False)
-    f4 = Column('id_url', nullable=False)
-class User4(Base):
-    __tablename__ = 'url'
-    f1 = Column('idurl', nullable=False,primary_key=True)
-    f5 = Column('url', nullable=False)    
-    f6 = Column('id_site', nullable=False) 
-class User5(Base):
-    __tablename__ = 'rating'
-    f1 = Column('idrating', nullable=False,primary_key=True)
-    f5 = Column('id_rate', nullable=False)    
-class User6(Base):
-    __tablename__ = 'year'
-    f1 = Column('idyear', nullable=False,primary_key=True)
-    f5 = Column('id_year', nullable=False)    
-class User7(Base):
-    __tablename__ = 'votes'
-    f1 = Column('idvotes', nullable=False,primary_key=True)
-    f5 = Column('id_votes', nullable=False)
-class User8(Base):
-    __tablename__ = 'cast_plot'
-    f1 = Column('id_movie', nullable=False,primary_key=True)
-    f5 = Column('id_cast', nullable=True)
-    f6 = Column('id_plot', nullable=True)
-class User9(Base):
-    __tablename__ = 'trail_img'
-    f1 = Column('id_movie', nullable=False,primary_key=True)
-    f5 = Column('id_img', nullable=True)
-    f6 = Column('id_trail', nullable=True)
-class User10(Base):
-    __tablename__ = 'site'
-    f1 = Column('idsite', nullable=False,primary_key=True)
-    f5 = Column('sitename', nullable=False)
       
-def see(m1):
+def see(m2):
     
-    try:
+    
         name=[]
         genre=[]
         site=[]
-        url_name=[]
+        url=[]
         im=[]
         rate=[]
         yr=[]
         vt=[]
-        gen=[]
         cst=[]
         pl=[]
-        pos=[]
         trail=[]
-        url_site={}
-        th=[]
-        m=m1
-        m2=m1
         counter=1
         m41=[]
-        if " " in m : 
+        url_site={}
+        if " " in m2 : 
             counter=0
-            m4=m.split(" ")
+            m4=m2.split(" ")
             l_w=len(m4)
             counter1=1
             if(m4[l_w-1]==""):
@@ -153,129 +106,181 @@ def see(m1):
                 elif (l_w==4):
                     m41.append(m4[0])
                              
-        if "-" in m : 
+        if "-" in m2 : 
             counter=0
             
-            m4=m.split("-")
+            m4=m2.split("-")
             m41.append(m4[0])
                          
-        if "man" in m : 
+        if "man" in m2 : 
             counter=0
-            m4=m.split("man")
+            m4=m2.split("man")
             l_w=len(m4)
             if(m4[1]==""):
                 m41.append(m4[0])
                          
-        if "woman" in m : 
+        if "woman" in m2 : 
             counter=0
-            m4=m.split("woman")
+            m4=m2.split("woman")
             l_w=len(m4)
             if(m4[1]==""):
                 m41.append(m4[0])
                          
-        if "boy" in m : 
+        if "boy" in m2 : 
             counter=0
-            m4=m.split("boy")
+            m4=m2.split("boy")
             l_w=len(m4)
             if(m4[1]==""):
                 m41.append(m4[0])
                          
-        if "girl" in m : 
+        if "girl" in m2 : 
             counter=0
-            m4=m.split("girl")
+            m4=m2.split("girl")
             l_w=len(m4)
             if(m4[1]==""):
                 m41.append(m4[0])
                          
-        if "mr." in m : 
+        if "mr." in m2 : 
             counter=0
-            m4=m.split("mr.")
+            m4=m2.split("mr.")
             l_w=len(m4)
             if(m4[0]==""):
                 m41.append(m4[1])
                          
-        if "mrs." in m : 
+        if "mrs." in m2 : 
             counter=0
-            m4=m.split("mrs.")
+            m4=m2.split("mrs.")
             l_w=len(m4)
             if(m4[0]==""):
                 m41.append(m4[1])
                     
         if (counter!=0) : 
-            m41.append(m)
+            m41.append(m2)
+        m41==list(dict.fromkeys(m41))
         
+        sql="SELECT movies.movie,\
+        genre.genre,url.url,site.sitename,rating.id_rate,votes.id_votes,\
+        cast_plot.id_cast,cast_plot.id_plot,trail_img.id_img,trail_img.id_trail,\
+        year.id_year \
+        from movies \
+        INNER JOIN movie_genre ON movie_genre.id_movie = movies.idmovies \
+        INNER JOIN genre ON movie_genre.id_genre = genre.idgenre \
+        INNER JOIN movie_url ON movies.idmovies = movie_url.id_movie \
+        INNER JOIN url ON movie_url.id_url = url.idurl \
+        INNER JOIN site ON url.id_site = site.idsite \
+        INNER JOIN rating ON movies.idmovies = rating.idrating \
+        INNER JOIN votes ON movies.idmovies = votes.idvotes \
+        INNER JOIN cast_plot ON movies.idmovies = cast_plot.id_movie \
+        INNER JOIN trail_img ON movies.idmovies = trail_img.id_movie \
+        INNER JOIN year ON movies.idmovies = year.idyear \
+         "
+        w="WHERE "    
+        n2="movies.movie LIKE :a "
+        t=sql+w+n2
+        name1='%'+m41[0]+'%'
         
+        sql_query = sqlalchemy.text(t)  
         
+        result = connection.execute(sql_query,a=name1)
+                                
+        result_as_list = result.fetchall()
+        for row in result_as_list:
+            name.append(row[0])
+            genre.append(row[1])
+            url.append(row[2])
+            site.append(row[3])
+            rate.append(row[4])
+            vt.append(row[5])
+            cst.append(row[6])
+            pl.append(row[7])
+            im.append(row[8])
+            trail.append(row[9])
+            yr.append(row[10])
+        ##remove duplictes##
+        th=[]
+        name1=[]
+        genre1=[]
         
-        for search in m41:
-            users =session.query(User).filter(User.f2.like("%"+search+"%")).all()    
-            for user in users:
-                
-                name.append(user.f2)          
-                pos.append(user.f1)    
-                pos=list(dict.fromkeys(pos))
-                th=[]
-            c=0
-            for search1 in pos:
-                d=""
-                ##genre##
-                u1 =session.query(User1).filter(User1.f3 == search1).all()    
-                for u2 in u1:
-                    u3 =session.query(User2).filter(User2.f1 == u2.f4).all()
-                    for u4 in u3:
-                        d=d+str(u4.f5)+" "
-                    genre.append(d)
-                
-                ##rate##
-                u1 =session.query(User5).filter(User5.f1 == search1).one()    
-                rate.append(u1.f5)
-                ##year##
-                u1 =session.query(User6).filter(User6.f1 == search1).one()    
-                yr.append(u1.f5)
-                ##votes##
-                u1 =session.query(User7).filter(User7.f1 == search1).one()    
-                vt.append(u1.f5)
-                ##image and trailer##
-                u1 =session.query(User9).filter(User9.f1 ==  search1).one()   
-                im.append(u1.f5)
-                trail.append(u1.f6)
-                #url##
-                u1 =session.query(User3).filter(User3.f3 == search1).all()   
-                
-                
-                for u2 in u1:
-                    u3 =session.query(User4).filter(User4.f1 == u2.f4)
-                    for u4 in u3:
-                        u5 =session.query(User10).filter(User10.f1 == u4.f6).all()
-                        for u6 in u5:
-                            th.append(u4.f5+"#"+u6.f5)
-                            break
-                
-                th=list(dict.fromkeys(th))
-                
-                url_site[name[c]]={}
-                for m in th:
-                    
-                    url_site[name[c]][m.split('#')[1]]=m.split('#')[0]
-                
-                c=c+1    
-                    
-                
-                ##cast and plot ##
-                u1 =session.query(User8).filter(User8.f1 == pos[0]).one()   
-                cst.append(u1.f5)
-                pl.append(u1.f6)
+        url1_site1={}
+        im1=[]
+        rate1=[]
+        yr1=[]
+        vt1=[]
+        cst1=[]
+        pl1=[]
+        trail1=[]
+        for i in range(len(name)):
+            th.append(name[i]+"#"+site[i])
+        th=list(dict.fromkeys(th))
         
+        for i in range(len(th)):
+            try:
+                
+                for j in range(len(name)):
+                    if(th[i]==name[j]+"#"+site[j]):
+                        url1_site1[name[j]][site[j]]=url[j]
+                        name1.append(name[j])
+                        genre1.append(genre[j])
+                        rate1.append(rate[j])
+                        vt1.append(vt[j])
+                        cst1.append(cst[j])
+                        pl1.append(pl[j])
+                        im1.append(im[j])
+                        trail1.append(trail[j])
+                        yr1.append(yr[j])
+                        break
+
+            except:
+                
+                url1_site1[th[i].split("#")[0]]={}
+                for j in range(len(name)):
+                    if(th[i]==name[j]+"#"+site[j]):
+                        g2=[]
+                        for k in range(len(name)):
+                            
+                            if(name[k]==name[j]):
+                                g2.append(genre[k])
+                            g2=list(dict.fromkeys(g2))    
+                            g3=""
+                            for m in g2:
+                                g3=g3+m+' '
+                        url1_site1[name[j]][site[j]]=url[j]
+                        name1.append(name[j])
+                        genre1.append(g3)
+                        rate1.append(rate[j])
+                        vt1.append(vt[j])
+                        cst1.append(cst[j])
+                        pl1.append(pl[j])
+                        im1.append(im[j])
+                        trail1.append(trail[j])
+                        yr1.append(yr[j])
+                        break
+                pass
+        resp_data = []
+            
+        for i in range(len((url1_site1))):
+            temp_dict = {}
+            temp_dict["urlname"]=url1_site1[name1[i]]
+            temp_dict["image"]=im1[i]
+            temp_dict["name"]=name1[i]
+            temp_dict["image"]=im1[i]
+            temp_dict["genre"]=genre1[i]
+            temp_dict["rate"]=rate1[i]
+            temp_dict["year"]=yr1[i]
+            temp_dict["votes"]=vt1[i]
+            temp_dict["cast"]=cst1[i]
+            temp_dict["plot"]=pl1[i]
+            temp_dict["trailer"]=trail1[i]
+            resp_data.append(temp_dict)
         
 
         
+        return(resp_data)
   
         
-    except:
-        session.rollback()
-        raise
-    finally:
-        session.close()
+  
+        
+   
     
     
-    return (name,rate,yr,vt,cst,pl,im,trail,genre,url_site)
+    

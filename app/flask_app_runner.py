@@ -16,33 +16,12 @@ def run():
                 count=count+1
         l=len(mvname)		 
         if(mvname!="" and l!=count):
-            print(mvname)
             m=mvname.lstrip()
-            
+            print(m)
             #db search
             result={}
-            name,rate,yr,vt,cst,pl,im,trail,genre,url=see(m)
-        
-        
-        resp_data = []
-        
-        for i in range(len(name)):
-            temp_dict = {}
-            temp_dict["urlname"]=url[name[i]]
-            temp_dict["image"]=im[i]
-            temp_dict["name"]=name[i]
-            temp_dict["image"]=im[i]
-            temp_dict["genre"]=genre[i]
-            temp_dict["rate"]=rate[i]
-            temp_dict["year"]=yr[i]
-            temp_dict["votes"]=vt[i]
-            temp_dict["cast"]=cst[0]
-            temp_dict["plot"]=pl[0]
-            temp_dict["trailer"]=trail[i]
-            resp_data.append(temp_dict)
-            
-        
-        return jsonify({'data': resp_data})
+            resp_data=see(m)
+            return jsonify({'data': resp_data})
     @app.route("/filter",methods=["POST"])	
     def filter():
         filter1={}

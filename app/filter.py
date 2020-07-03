@@ -543,8 +543,7 @@ def filter_fr_all(dict12):
     pl1=[]
     trail1=[]
     for i in range(len(name)):
-        if(name[i]=='1920'):
-            th.append(name[i]+"#"+site[i])
+        th.append(name[i]+"#"+site[i])
     th=list(dict.fromkeys(th))
     for i in range(len(th)):
         try:
