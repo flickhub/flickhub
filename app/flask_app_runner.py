@@ -1,5 +1,6 @@
 from flask import Flask, render_template,request,redirect, url_for,jsonify
 from db_initiate import see
+from db_initiate import random1
 from filter import filter_fr_all
 from feedback import feed_back
 
@@ -7,6 +8,11 @@ app = Flask(__name__)
 
 def run():
     
+    @app.route("/",methods=["POST"])
+    def land_page():
+        resp_data0=random1()
+        
+        return jsonify({'data': resp_data0})
     @app.route("/submit",methods=["POST"])
     def submit():
         count=0
@@ -21,6 +27,7 @@ def run():
             #db search
             result={}
             resp_data=see(m)
+            
             return jsonify({'data': resp_data})
     @app.route("/filter",methods=["POST"])	
     def filter():
@@ -46,6 +53,6 @@ def run():
     
 run()			
 
-
+    
 
 
