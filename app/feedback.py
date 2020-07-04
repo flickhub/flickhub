@@ -6,14 +6,9 @@ import sqlalchemy
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
-connection = engine.connect()
-
-Session = sessionmaker(bind=engine)
-session = Session()
-Base = declarative_base()
-metadata = MetaData()
+from db_start import db_starter
 def feed_back(feedback1):
+    db_starter()
     feedback2=feedback1
     email=feedback2["feedback"]["email"]
     first_name=feedback2["feedback"]["first_name"]
@@ -27,8 +22,8 @@ def feed_back(feedback1):
     
     mail_content = "Name:-"+str(first_name)+" "+str(last_name)+"\nFeedback:-"+str(feedback)+"\nQuick Review:-"+str(quick_review)+"\nQuestion:-"+str(question)+"\nEmail:-"+str(email)
     #The mail addresses and password
-    sender_address = 'suvojitlodh20104@gmail.com'
-    sender_pass = "udon'tknowme123"
+    sender_address = 'info.flickhub@gmail.com'
+    sender_pass = "buhkcilf20%"
     receiver_address = 'parth.verma96@gmail.com'
     #Setup the MIME
     message = MIMEMultipart()

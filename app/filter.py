@@ -3,13 +3,7 @@ from sqlalchemy.dialects.mysql.base import VARCHAR, LONGTEXT, INTEGER
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
-engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
-connection = engine.connect()
-
-Session = sessionmaker(bind=engine)
-session = Session()
-Base = declarative_base()
-metadata = MetaData()
+from db_start import db_starter
 
 # function to return key for any value 
 def get_key(val): 
@@ -22,6 +16,7 @@ def get_key(val):
 #####filter#####
 ################
 def filter_fr_all(dict12):
+    db_starter()
     dict1=dict12
     name=[]
     genre=[]

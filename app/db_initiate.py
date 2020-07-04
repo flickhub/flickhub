@@ -3,15 +3,10 @@ from sqlalchemy.dialects.mysql.base import VARCHAR, LONGTEXT, INTEGER
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
-engine = create_engine('mysql://shuvo:1234@localhost:3306/data', convert_unicode=True, echo=False)
-connection = engine.connect()
-import random
-Session = sessionmaker(bind=engine)
-session = Session()
-Base = declarative_base()
-metadata = MetaData()
+from db_start import db_starter
 
 def random1():
+    db_starter()
     c=0
     l1=[]
     while(c<25):
