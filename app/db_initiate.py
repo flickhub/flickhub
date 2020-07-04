@@ -4,9 +4,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 from db_start import db_starter
-
+import random
 def random1():
-    db_starter()
+    connection=db_starter()
     c=0
     l1=[]
     while(c<25):
@@ -51,7 +51,7 @@ def get_key(val):
 def see(m2):
     
     
-    
+    connection=db_starter()
     counter=1
     m41=[]
     url_site={}
@@ -180,6 +180,7 @@ def see(m2):
     r_data=searcher(m51)
     return (r_data)
 def searcher(m61):
+    connection=db_starter()
     name=[]
     genre=[]
     site=[]
@@ -191,11 +192,12 @@ def searcher(m61):
     cst=[]
     pl=[]
     trail=[]
+    id_mv=[]
     m71=m61
     sql="SELECT movies.movie,\
         genre.genre,url.url,site.sitename,rating.id_rate,votes.id_votes,\
         cast_plot.id_cast,cast_plot.id_plot,trail_img.id_img,trail_img.id_trail,\
-        year.id_year \
+        year.id_year,movies.idmovies \
         from movies \
         INNER JOIN movie_genre ON movie_genre.id_movie = movies.idmovies \
         INNER JOIN genre ON movie_genre.id_genre = genre.idgenre \
@@ -230,6 +232,7 @@ def searcher(m61):
         im.append(row[8])
         trail.append(row[9])
         yr.append(row[10])
+        id_mv.append(row[11])
     ##remove duplictes##
     th=[]
     name1=[]
@@ -243,6 +246,7 @@ def searcher(m61):
     cst1=[]
     pl1=[]
     trail1=[]
+    id_mv1=[]
     for i in range(len(name)):
         th.append(name[i]+"#"+site[i])
     th=list(dict.fromkeys(th))
@@ -262,6 +266,7 @@ def searcher(m61):
                     im1.append(im[j])
                     trail1.append(trail[j])
                     yr1.append(yr[j])
+                    id_mv1.append(id_mv[j])
                     break
 
         except:
@@ -288,6 +293,7 @@ def searcher(m61):
                     im1.append(im[j])
                     trail1.append(trail[j])
                     yr1.append(yr[j])
+                    id_mv1.append(id_mv[j])
                     break
             pass
     resp_data = []
@@ -305,6 +311,8 @@ def searcher(m61):
         temp_dict["cast"]=cst1[i]
         temp_dict["plot"]=pl1[i]
         temp_dict["trailer"]=trail1[i]
+        temp_dict["id_mov"]=id_mv1[i]
+        
         resp_data.append(temp_dict)
     
 

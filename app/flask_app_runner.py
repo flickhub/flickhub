@@ -3,7 +3,7 @@ from db_initiate import see
 from db_initiate import random1
 from filter import filter_fr_all
 from feedback import feed_back
-
+from title import title_render
 app = Flask(__name__)	 
 
 def run():
@@ -46,9 +46,10 @@ def run():
         feed_back(feedback)
         
         return("1")    
-        
-        
-
+    @app.route("/title/<id_mov1>",methods=["POST"])	
+    def title(id_mov1):
+        resp_data=title_render(id_mov1)
+        return jsonify({'data': resp_data})  
     app.run(debug=True,host='0.0.0.0')
     
 run()			

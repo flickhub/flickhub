@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from db_start import db_starter
 def feed_back(feedback1):
-    db_starter()
+    connection=db_starter()
     feedback2=feedback1
     email=feedback2["feedback"]["email"]
     first_name=feedback2["feedback"]["first_name"]
@@ -19,7 +19,7 @@ def feed_back(feedback1):
     
     sql="INSERT INTO feedback(email, first_name, last_name, question, feedback, quick_review) VALUES(:a,:b,:c,:d,:e,:f)"
     sql_query = sqlalchemy.text(sql)
-    
+    result = connection.execute(sql_query,a=str(email),b=str(first_name),c=str(last_name),d=str(question),e=str(feedback),f=str(quick_review))
     mail_content = "Name:-"+str(first_name)+" "+str(last_name)+"\nFeedback:-"+str(feedback)+"\nQuick Review:-"+str(quick_review)+"\nQuestion:-"+str(question)+"\nEmail:-"+str(email)
     #The mail addresses and password
     sender_address = 'info.flickhub@gmail.com'

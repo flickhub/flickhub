@@ -16,7 +16,8 @@ def get_key(val):
 #####filter#####
 ################
 def filter_fr_all(dict12):
-    db_starter()
+    
+    connection=db_starter()
     dict1=dict12
     name=[]
     genre=[]
@@ -29,6 +30,7 @@ def filter_fr_all(dict12):
     cst=[]
     pl=[]
     trail=[]
+    id_mv=[]
     dict_rate={'0':['0','1'],'1':['1','2'],'2':['2','3'],'3':['3','4'],'4':['4','5'],'5':['5','6'],'6':['6','7'],'7':['7','8'],'8':['8','9'],'9':['9','10']}
     dict_year={'0':['1950','1955'],'1':['1956','1960'],'2':['1961','1965'],
     '3':['1966','1970'],'4':['1971','1975'],'5':['1976','1980'],'6':['1981','1985'],
@@ -139,6 +141,7 @@ def filter_fr_all(dict12):
                                         im.append(row[8])
                                         trail.append(row[9])
                                         yr.append(row[10])
+                                        id_mv.append(row[11])
                                 except:
                                     pass    
                                     
@@ -166,6 +169,7 @@ def filter_fr_all(dict12):
                                 im.append(row[8])
                                 trail.append(row[9])
                                 yr.append(row[10])
+                                id_mv.append(row[11])
                         except:
                             pass    
             else:
@@ -194,6 +198,7 @@ def filter_fr_all(dict12):
                                     im.append(row[8])
                                     trail.append(row[9])
                                     yr.append(row[10])
+                                    id_mv.append(row[11])
                             except:
                                 pass    
                 else:
@@ -216,7 +221,8 @@ def filter_fr_all(dict12):
                             pl.append(row[7])
                             im.append(row[8])
                             trail.append(row[9])
-                            yr.append(row[10])        
+                            yr.append(row[10])
+                            id_mv.append(row[11])
                     except:
                         pass
         else:
@@ -250,6 +256,7 @@ def filter_fr_all(dict12):
                                         im.append(row[8])
                                         trail.append(row[9])
                                         yr.append(row[10])
+                                        id_mv.append(row[11])
                                 except:
                                     pass    
                     else:
@@ -274,6 +281,7 @@ def filter_fr_all(dict12):
                                 im.append(row[8])
                                 trail.append(row[9])
                                 yr.append(row[10]) 
+                                id_mv.append(row[11])
                         except:
                             pass    
             else:
@@ -301,6 +309,7 @@ def filter_fr_all(dict12):
                                     im.append(row[8])
                                     trail.append(row[9])
                                     yr.append(row[10])  
+                                    id_mv.append(row[11])
                             except:
                                 pass    
                 else:
@@ -323,6 +332,7 @@ def filter_fr_all(dict12):
                             im.append(row[8])
                             trail.append(row[9])
                             yr.append(row[10])
+                            id_mv.append(row[11])
                     except:
                         pass    
     else:
@@ -359,6 +369,7 @@ def filter_fr_all(dict12):
                                         im.append(row[8])
                                         trail.append(row[9])
                                         yr.append(row[10])
+                                        id_mv.append(row[11])
                                 except:
                                     pass    
                     else:
@@ -384,6 +395,7 @@ def filter_fr_all(dict12):
                                 im.append(row[8])
                                 trail.append(row[9])
                                 yr.append(row[10])
+                                id_mv.append(row[11])
                         except:
                             pass    
             else:
@@ -412,6 +424,7 @@ def filter_fr_all(dict12):
                                     im.append(row[8])
                                     trail.append(row[9])
                                     yr.append(row[10])
+                                    id_mv.append(row[11])
                             except:
                                 pass    
                 else:
@@ -434,7 +447,8 @@ def filter_fr_all(dict12):
                             pl.append(row[7])
                             im.append(row[8])
                             trail.append(row[9])
-                            yr.append(row[10])        
+                            yr.append(row[10]) 
+                            id_mv.append(row[11])
                     except:
                         pass
         else:
@@ -468,6 +482,7 @@ def filter_fr_all(dict12):
                                         im.append(row[8])
                                         trail.append(row[9])
                                         yr.append(row[10])
+                                        id_mv.append(row[11])
                                 except:
                                     pass    
                     else:
@@ -494,6 +509,7 @@ def filter_fr_all(dict12):
                                 im.append(row[8])
                                 trail.append(row[9])
                                 yr.append(row[10])  
+                                id_mv.append(row[11])
                         except:
                             pass    
             else:
@@ -521,7 +537,8 @@ def filter_fr_all(dict12):
                                     pl.append(row[7])
                                     im.append(row[8])
                                     trail.append(row[9])
-                                    yr.append(row[10])        
+                                    yr.append(row[10])    
+                                    id_mv.append(row[11])
                             except:
                                 pass
     ##remove duplictes##
@@ -537,6 +554,7 @@ def filter_fr_all(dict12):
     cst1=[]
     pl1=[]
     trail1=[]
+    id_mv1=[]
     for i in range(len(name)):
         th.append(name[i]+"#"+site[i])
     th=list(dict.fromkeys(th))
@@ -555,6 +573,7 @@ def filter_fr_all(dict12):
                     im1.append(im[j])
                     trail1.append(trail[j])
                     yr1.append(yr[j])
+                    id_mv1.append(id_mv[j])
                     break
 
         except:
@@ -581,6 +600,7 @@ def filter_fr_all(dict12):
                     im1.append(im[j])
                     trail1.append(trail[j])
                     yr1.append(yr[j])
+                    id_mv1.append(id_mv[j])
                     break
             pass
 
@@ -600,6 +620,7 @@ def filter_fr_all(dict12):
         temp_dict["cast"]=cst1[i]
         temp_dict["plot"]=pl1[i]
         temp_dict["trailer"]=trail1[i]
+        temp_dict["id_mov"]=id_mv1[i]
         resp_data.append(temp_dict)
         
 
