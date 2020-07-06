@@ -250,7 +250,7 @@ def searcher(m61):
     for i in range(len(name)):
         th.append(name[i]+"#"+site[i])
     th=list(dict.fromkeys(th))
-    
+    th1=[]
     for i in range(len(th)):
         try:
             
@@ -267,6 +267,17 @@ def searcher(m61):
                     trail1.append(trail[j])
                     yr1.append(yr[j])
                     id_mv1.append(id_mv[j])
+                    
+                    name.remove(name[j])
+                    genre.remove(genre[j])
+                    rate.remove(rate[j])
+                    vt.remove(vt[j])
+                    cst.remove(cst[j])
+                    pl.remove(pl[j])
+                    im.remove(im[j])
+                    trail.remove(trail[j])
+                    yr.remove(yr[j])
+                    id_mv.remove(id_mv[j])
                     break
 
         except:
@@ -283,6 +294,7 @@ def searcher(m61):
                         g3=""
                         for m in g2:
                             g3=g3+m+' '
+                    
                     url1_site1[name[j]][site[j]]=url[j]
                     name1.append(name[j])
                     genre1.append(g3)
@@ -294,11 +306,22 @@ def searcher(m61):
                     trail1.append(trail[j])
                     yr1.append(yr[j])
                     id_mv1.append(id_mv[j])
+                    
+                    name.remove(name[j])
+                    genre.remove(genre[j])
+                    rate.remove(rate[j])
+                    vt.remove(vt[j])
+                    cst.remove(cst[j])
+                    pl.remove(pl[j])
+                    im.remove(im[j])
+                    trail.remove(trail[j])
+                    yr.remove(yr[j])
+                    id_mv.remove(id_mv[j])
                     break
             pass
     resp_data = []
-        
-    for i in range(len((url1_site1))):
+      
+    for i in range(len((name1))):
         temp_dict = {}
         temp_dict["urlname"]=url1_site1[name1[i]]
         temp_dict["image"]=im1[i]
