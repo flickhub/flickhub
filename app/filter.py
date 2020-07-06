@@ -89,7 +89,7 @@ def filter_fr_all(dict12):
     sql="SELECT movies.movie,\
         genre.genre,url.url,site.sitename,rating.id_rate,votes.id_votes,\
         cast_plot.id_cast,cast_plot.id_plot,trail_img.id_img,trail_img.id_trail,\
-        year.id_year \
+        year.id_year,movies.idmovies \
         from movies \
         INNER JOIN movie_genre ON movie_genre.id_movie = movies.idmovies \
         INNER JOIN genre ON movie_genre.id_genre = genre.idgenre \
