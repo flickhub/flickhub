@@ -1,0 +1,1 @@
+database_url = 'mysql://root:Password123@localhost:3306/flickhub'
