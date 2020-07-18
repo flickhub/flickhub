@@ -4,11 +4,12 @@ from db_initiate import random1
 from filter import filter_fr_all
 from feedback import feed_back
 from title import title_render
-app = Flask(__name__)	 
-
+from flask_cors import CORS
+app = Flask(__name__, template_folder="/home/ubuntu/build")	 
+CORS(app)
 
     
-@app.route("/",methods=["POST"])
+@app.route("/random",methods=["POST"])
 def land_page():
     resp_data0=random1()
     
@@ -50,8 +51,14 @@ def feedback():
 def title(id_mov1):
     resp_data=title_render(id_mov1)
     return jsonify({'data': resp_data})  
-app.run(debug=True,host='0.0.0.0')
 
+@app.route('/')
+def hello():
+        return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
 			
 
     
