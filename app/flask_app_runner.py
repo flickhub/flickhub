@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request,redirect, url_for,jsonify
 from db_initiate import see
 from db_initiate import random1
-from filter import filter_fr_all
+from filter import filter_fr_all, get_movies_name
 from feedback import feed_back
 from title import title_render
 from flask_cors import CORS
@@ -12,8 +12,8 @@ CORS(app)
 @app.route("/random",methods=["POST"])
 def land_page():
     resp_data0=random1()
-    
     return jsonify({'data': resp_data0})
+
 @app.route("/submit",methods=["POST"])
 def submit():
     count=0
@@ -28,8 +28,8 @@ def submit():
         #db search
         result={}
         resp_data=see(m)
-        
-        return jsonify({'data': resp_data})
+    return jsonify({'data': resp_data})
+
 @app.route("/filter",methods=["POST"])	
 def filter():
     filter1={}
@@ -45,12 +45,17 @@ def feedback():
     feedback={}
     feedback["feedback"] = request.json['feedback']
     feed_back(feedback)
-    
-    return("1")    
+    return("1")
+
 @app.route("/title/<id_mov1>",methods=["POST"])	
 def title(id_mov1):
     resp_data=title_render(id_mov1)
-    return jsonify({'data': resp_data})  
+    return jsonify({'data': resp_data}) 
+
+@app.route("/search/<val>",methods=["POST"])	
+def auto_search(val):
+    return jsonify(get_movies_name(val))
+
 
 @app.route('/')
 def hello():

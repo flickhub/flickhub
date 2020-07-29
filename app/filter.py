@@ -5,6 +5,17 @@ from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 from db_start import db_starter
 
+def get_movies_name(val):
+    connection=db_starter()
+    sql_query= 'Select movie from movies where movie like '+'"%%'+val+'%%";'
+    data = []
+    result = connection.execute(sql_query)
+    for row in result:
+        data.append(row[0])
+
+    return {"data": data}
+
+
 # function to return key for any value 
 def get_key(val): 
     for key, value in my_dict.items(): 
