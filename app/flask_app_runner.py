@@ -1,6 +1,6 @@
 from flask import Flask, render_template,request,redirect, url_for,jsonify
 from db_initiate import see
-from db_initiate import random1
+from db_initiate import random1, search_movies
 from filter import filter_fr_all, get_movies_name
 from feedback import feed_back
 from title import title_render
@@ -55,6 +55,10 @@ def title(id_mov1):
 @app.route("/search/<val>",methods=["POST"])	
 def auto_search(val):
     return jsonify(get_movies_name(val))
+
+@app.route("/submit2/<val>",methods=["POST"])	
+def submit2(val):
+    return jsonify(search_movies(val))
 
 
 @app.route('/')
