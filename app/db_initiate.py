@@ -5,6 +5,45 @@ from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 from db_start import db_starter
 import random
+
+def get_one_movie(id):
+    connection=db_starter()
+    query = ''
+
+def search_movies(val):
+    connection=db_starter()
+    query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename)
+            from movies as mm 
+            join movie_url as mu on mu.id_movie = mm.idmovies
+            join url as uu on uu.idurl = mu.id_url
+            join trail_img as tm on tm.id_movie = mm.idmovies
+            join site as ss on ss.idsite = uu.id_site
+            where mm.movie like '%%{}%%'
+            GROUP BY (mm.idmovies);'''.format(val)
+
+    data = []
+    result = connection.execute(query)
+
+    for row in result:
+        temp_dict = {}
+        temp_dict['movie_id'] = row[0]
+        temp_dict['movie_name'] = row[1]
+        temp_dict['img'] = row[2]
+        temp_dict['y_src'] = row[3]
+        urls = list(set(row[4].split(',')))
+        platforms = list(set(row[5].split(',')))
+        plat_dict = {}
+        for pp in platforms:
+            for url in urls:
+                if pp.lower() in url:
+                    plat_dict[pp] = url
+                    break
+        temp_dict['platforms'] = plat_dict
+        data.append(temp_dict)
+    
+    return {'data': data}
+
+
 def random1():
     connection=db_starter()
     c=0
