@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Youtube Extension",
+  "version": "0.1.0",
+  "author": "Ujjwal Verma",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["tabs"]
+}
