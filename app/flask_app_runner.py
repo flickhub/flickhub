@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,redirect, url_for,jsonify
+from flask import Flask, render_template,request,redirect, url_for,jsonify, send_file
 from db_initiate import see
 from db_initiate import random1, search_movies
 from filter import filter_fr_all, get_movies_name, get_single_movie
@@ -8,6 +8,23 @@ from flask_cors import CORS
 app = Flask(__name__, template_folder="/home/ubuntu/build")	 
 CORS(app)
 
+path = '/home/ubuntu/build/'
+
+@app.route('/')
+def hello():
+    return render_template('index.html')
+
+@app.route('/public/manifest.json')
+def manifest():
+    return render_template('manifest.json')
+
+@app.route('/public/logo192.png')
+def logo192():
+        return send_file(path+'logo192.png')
+
+@app.route('/logo3.png')
+def logo3():
+        return send_file(path+'logo3.png')
     
 @app.route("/random",methods=["POST"])
 def land_page():
@@ -59,11 +76,6 @@ def auto_search(val):
 @app.route("/submit2/<val>",methods=["POST"])	
 def submit2(val):
     return jsonify(search_movies(val))
-
-
-@app.route('/')
-def hello():
-        return render_template('index.html')
 
 
 if __name__ == '__main__':
