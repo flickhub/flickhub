@@ -9,13 +9,13 @@ def get_single_movie(val):
     connection=db_starter()
     query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), cp.id_cast, cp.id_plot, group_concat(gg.genre)
         from movies as mm 
-        join cast_plot as cp on cp.id_movie = mm.idmovies
-        join movie_genre as mg on mg.id_movie = mm.idmovies
-        join genre as gg on gg.idgenre = mg.id_genre
-        join movie_url as mu on mu.id_movie = mm.idmovies
-        join url as uu on uu.idurl = mu.id_url
-        join trail_img as tm on tm.id_movie = mm.idmovies
-        join site as ss on ss.idsite = uu.id_site
+        left join cast_plot as cp on cp.id_movie = mm.idmovies
+        left join movie_genre as mg on mg.id_movie = mm.idmovies
+        left join genre as gg on gg.idgenre = mg.id_genre
+        left join movie_url as mu on mu.id_movie = mm.idmovies
+        left join url as uu on uu.idurl = mu.id_url
+        left join trail_img as tm on tm.id_movie = mm.idmovies
+        left join site as ss on ss.idsite = uu.id_site
         where mm.idmovies = {}
         GROUP BY (mm.idmovies);'''.format(val)
 

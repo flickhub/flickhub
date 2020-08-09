@@ -14,10 +14,10 @@ def search_movies(val):
     connection=db_starter()
     query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename)
             from movies as mm 
-            join movie_url as mu on mu.id_movie = mm.idmovies
-            join url as uu on uu.idurl = mu.id_url
-            join trail_img as tm on tm.id_movie = mm.idmovies
-            join site as ss on ss.idsite = uu.id_site
+            left join movie_url as mu on mu.id_movie = mm.idmovies
+            left join url as uu on uu.idurl = mu.id_url
+            left join trail_img as tm on tm.id_movie = mm.idmovies
+            left join site as ss on ss.idsite = uu.id_site
             where mm.movie like '%%{}%%'
             GROUP BY (mm.idmovies);'''.format(val)
 
