@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request,redirect, url_for,jsonify
 from db_initiate import see
 from db_initiate import random1, search_movies
-from filter import filter_fr_all, get_movies_name
+from filter import filter_fr_all, get_movies_name, get_single_movie
 from feedback import feed_back
 from title import title_render
 from flask_cors import CORS
@@ -47,9 +47,9 @@ def feedback():
     feed_back(feedback)
     return("1")
 
-@app.route("/title/<id_mov1>",methods=["POST"])	
-def title(id_mov1):
-    resp_data=title_render(id_mov1)
+@app.route("/title/<val>")	
+def title(val):
+    resp_data = get_single_movie(val)
     return jsonify({'data': resp_data}) 
 
 @app.route("/search/<val>",methods=["POST"])	

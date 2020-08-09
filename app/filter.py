@@ -5,6 +5,46 @@ from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 from db_start import db_starter
 
+def get_single_movie(val):
+    connection=db_starter()
+    query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), cp.id_cast, cp.id_plot, group_concat(gg.genre)
+        from movies as mm 
+        join cast_plot as cp on cp.id_movie = mm.idmovies
+        join movie_genre as mg on mg.id_movie = mm.idmovies
+        join genre as gg on gg.idgenre = mg.id_genre
+        join movie_url as mu on mu.id_movie = mm.idmovies
+        join url as uu on uu.idurl = mu.id_url
+        join trail_img as tm on tm.id_movie = mm.idmovies
+        join site as ss on ss.idsite = uu.id_site
+        where mm.idmovies = {}
+        GROUP BY (mm.idmovies);'''.format(val)
+
+    data = []
+    result = connection.execute(query)
+
+    for row in result:
+        temp_dict = {}
+        temp_dict['movie_id'] = row[0]
+        temp_dict['movie_name'] = row[1]
+        temp_dict['img'] = row[2]
+        temp_dict['y_src'] = row[3]
+        urls = list(set(row[4].split(',')))
+        platforms = list(set(row[5].split(',')))
+        temp_dict['cast'] = row[6]
+        temp_dict['plot'] = row[7]
+        temp_dict['genres'] = list(set(row[8].split(',')))
+        plat_dict = {}
+        for pp in platforms:
+            for url in urls:
+                if pp.lower() in url:
+                    plat_dict[pp] = url
+                    break
+        temp_dict['platforms'] = plat_dict
+        data.append(temp_dict)
+    
+    return {'data': data}
+
+
 def get_movies_name(val):
     connection=db_starter()
     sql_query= 'Select movie from movies where movie like '+'"%%'+val+'%%";'
