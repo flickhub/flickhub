@@ -28,11 +28,22 @@ def get_single_movie(val):
         temp_dict['movie_name'] = row[1]
         temp_dict['img'] = row[2]
         temp_dict['y_src'] = row[3]
-        urls = list(set(row[4].split(',')))
-        platforms = list(set(row[5].split(',')))
+        try:
+            urls = list(set(row[4].split(',')))
+        except:
+            urls = []
+        try:
+            platforms = list(set(row[5].split(',')))
+        except:
+            platforms = []
+        
         temp_dict['cast'] = row[6]
         temp_dict['plot'] = row[7]
-        temp_dict['genres'] = list(set(row[8].split(',')))
+        try:
+            temp_dict['genres'] = list(set(row[8].split(',')))
+        except:
+            temp_dict['genres'] = []
+        
         plat_dict = {}
         for pp in platforms:
             for url in urls:
