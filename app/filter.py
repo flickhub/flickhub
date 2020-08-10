@@ -26,6 +26,8 @@ def filter_movies(params, page):
         filter_param = filter_param + "gg.genre IN ({}) AND".format(params['genres'])
     if params.get('rating_bool', False):
         filter_param = filter_param + " rr.id_rate >= {} AND rr.id_rate <= {} AND".format(params['rating'][0], int(params['rating'][0])+1)
+    if params.get('platform_bool', False):
+        filter_param = filter_param + "ss.sitename IN ({}) AND".format(params['platforms'])
 
     
     ending = '''GROUP BY (mm.idmovies)
