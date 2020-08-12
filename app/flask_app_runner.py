@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,redirect, url_for,jsonify, send_file
-from db_initiate import random1, search_movies, random_cat
+from db_initiate import search_movies, random_cat
 from filter import get_movies_name, get_single_movie, filter_movies
 from feedback import feed_back
 from title import title_render
@@ -60,7 +60,8 @@ def auto_search(val):
 
 @app.route("/submit2/<val>",methods=["POST"])	
 def submit2(val):
-    return jsonify(search_movies(val))
+    page = request.args.get('page', '1')
+    return jsonify(search_movies(val, page))
 
 
 if __name__ == '__main__':
