@@ -245,9 +245,9 @@ def search_movies(val, page):
         language_bool = False
 
 
-    similar_titles = get_similar_titles(genres, page, language_bool)
+    #similar_titles = get_similar_titles(genres, page, language_bool)
     
-    return {'data': data, 'similar': similar_titles}
+    return {'data': data, 'similar': []}
 
 
 def get_key(val): 

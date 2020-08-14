@@ -7,6 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from db_start import db_starter
+
 def feed_back(feedback1):
     connection=db_starter()
     feedback2=feedback1
