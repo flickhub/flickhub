@@ -34,7 +34,6 @@ def filter_movies(params, page):
 
     
     ending = '''GROUP BY (mm.idmovies)
-    ORDER BY rr.id_rate Desc
     limit {}, 21
     ;'''.format(offset)
     
