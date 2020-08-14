@@ -228,9 +228,9 @@ def search_movies(val, page):
     if genres == []:
         genres = ['action', 'comedy', 'adventure']
 
-    similar_titles = get_similar_titles(genres, page, 'false')
+    similar_titles = get_similar_titles(genres, page, False)
     connection.close()
-    return {'data': data, 'similar': []}
+    return {'data': data, 'similar': similar_titles}
 
 
 def get_key(val): 
