@@ -63,7 +63,7 @@ def get_similar_titles(genre_list, page, language_bool):
         data.append(temp_dict)
     
     random.shuffle(data)
-
+    connection.close()
     return data
 
 
@@ -246,7 +246,7 @@ def search_movies(val, page):
 
 
     #similar_titles = get_similar_titles(genres, page, language_bool)
-    
+    connection.close()
     return {'data': data, 'similar': []}
 
 

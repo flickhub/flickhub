@@ -66,7 +66,9 @@ def filter_movies(params, page):
         temp_dict['platforms'] = plat_dict
         data.append(temp_dict)
     
+    connection.close()
     return {'data': data}
+
 
 def get_single_movie(val):
     connection=db_starter()
@@ -116,6 +118,7 @@ def get_single_movie(val):
         temp_dict['platforms'] = plat_dict
         data.append(temp_dict)
     
+    connection.close()
     return {'data': data}
 
 
@@ -127,6 +130,7 @@ def get_movies_name(val):
     for row in result:
         data.append(row[0])
 
+    connection.close()
     return {"data": data}
 
 
