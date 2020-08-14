@@ -10,8 +10,6 @@ def most_frequent(List):
     return max(set(List), key = List.count) 
 
 def get_similar_titles(genre_list, page, language_bool):
-    print(genre_list)
-    print('-----------------------')
     offset = (int(page) - 1)*42
     connection=db_starter()
     query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), group_concat(gg.genre)
@@ -23,8 +21,6 @@ def get_similar_titles(genre_list, page, language_bool):
             left join movie_genre as mg on mg.id_movie = mm.idmovies
             left join genre as gg on gg.idgenre = mg.id_genre
             left join rating as rr on rr.idrating = mm.idmovies
-            left join movie_lang as ml on ml.id_movie = mm.idmovies
-            left join language as ll on ll.idlanguage = ml.id_lang
             where gg.genre in  ('{}')'''.format("', '".join(genre_list))
             
     
@@ -176,7 +172,7 @@ def random_cat():
 
 def search_movies(val, page):
     connection=db_starter()
-    query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), group_concat(gg.genre), group_concat(ll.lang)
+    query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), group_concat(gg.genre)
             from movies as mm 
             left join movie_url as mu on mu.id_movie = mm.idmovies
             left join url as uu on uu.idurl = mu.id_url
@@ -184,8 +180,6 @@ def search_movies(val, page):
             left join site as ss on ss.idsite = uu.id_site
             left join movie_genre as mg on mg.id_movie = mm.idmovies
             left join genre as gg on gg.idgenre = mg.id_genre
-            left join movie_lang as ml on ml.id_movie = mm.idmovies
-            left join language as ll on ll.idlanguage = ml.id_lang
             where mm.movie like '%%{}%%'
             GROUP BY (mm.idmovies);'''.format(val)
 
@@ -193,7 +187,6 @@ def search_movies(val, page):
     result = connection.execute(query)
 
     genre_list = []
-    language_list = []
 
     for row in result:
         temp_dict = {}
@@ -221,10 +214,6 @@ def search_movies(val, page):
             genre_list.extend(row[6].split(','))
         except:
             pass
-        try:
-            language_list.extend(row[7].split(','))
-        except:
-            pass
         data.append(temp_dict)
     
     genres = []
@@ -239,13 +228,7 @@ def search_movies(val, page):
     if genres == []:
         genres = ['action', 'comedy', 'adventure']
 
-    if 'Hindi' in language_list:
-        language_bool = True
-    else:
-        language_bool = False
-
-
-    #similar_titles = get_similar_titles(genres, page, language_bool)
+    similar_titles = get_similar_titles(genres, page, 'false')
     connection.close()
     return {'data': data, 'similar': []}
 

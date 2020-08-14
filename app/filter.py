@@ -6,7 +6,7 @@ import sqlalchemy
 from db_start import db_starter
 
 def filter_movies(params, page):
-    offset = (int(page) - 1)*21
+    offset = (int(page) - 1)*42
     connection=db_starter()
     query_init = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename)
         from movies as mm 
@@ -17,8 +17,6 @@ def filter_movies(params, page):
         left join rating as rr on rr.idrating = mm.idmovies
         left join movie_genre as mg on mg.id_movie = mm.idmovies
         left join genre as gg on gg.idgenre = mg.id_genre
-        left join movie_lang as ml on ml.id_movie = mm.idmovies
-        left join language as ll on ll.idlanguage = ml.id_lang
         left join year as yy on yy.idyear = mm.idmovies'''
     
        
@@ -34,7 +32,8 @@ def filter_movies(params, page):
 
     
     ending = '''GROUP BY (mm.idmovies)
-    limit {}, 21
+    ORDER BY rr.id_rate Desc
+    limit {}, 42
     ;'''.format(offset)
     
     query = query_init + ' ' + filter_param.strip('AND') + ' ' + ending
