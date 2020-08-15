@@ -14,7 +14,7 @@ def feed_back(feedback1):
     email=feedback2["feedback"]["email"]
     first_name=feedback2["feedback"]["first_name"]
     last_name=feedback2["feedback"]["last_name"]
-    question=feedback2["feedback"]["email"]
+    question=feedback2["feedback"]["question"]
     feedback=feedback2["feedback"]["feedback"]
     quick_review=feedback2["feedback"]["quick_review"]
     
@@ -24,7 +24,7 @@ def feed_back(feedback1):
     mail_content = "Name:-"+str(first_name)+" "+str(last_name)+"\nFeedback:-"+str(feedback)+"\nQuick Review:-"+str(quick_review)+"\nQuestion:-"+str(question)+"\nEmail:-"+str(email)
     #The mail addresses and password
     sender_address = 'info.flickhub@gmail.com'
-    sender_pass = "buhkcilf20%"
+    sender_pass = "hackermadarchodhai20%"
     receiver_address = 'parth.verma96@gmail.com'
     #Setup the MIME
     message = MIMEMultipart()
