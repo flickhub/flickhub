@@ -51,7 +51,8 @@ def feedback():
 
 @app.route("/title/<val>")	
 def title(val):
-    resp_data = get_single_movie(val)
+    page = request.args.get('page', '1')
+    resp_data = get_single_movie(val, page)
     return jsonify({'data': resp_data}) 
 
 @app.route("/search/<val>",methods=["POST"])	
