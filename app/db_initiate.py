@@ -230,6 +230,7 @@ def search_movies(val, page):
 
     similar_titles = get_similar_titles(genres, page, False)
     connection.close()
+    
     return {'data': data, 'similar': similar_titles}
 
 

@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 from db_start import db_starter
+from db_initiate import get_similar_titles
 
 def filter_movies(params, page):
     offset = (int(page) - 1)*42
@@ -68,7 +69,7 @@ def filter_movies(params, page):
     return {'data': data}
 
 
-def get_single_movie(val):
+def get_single_movie(val, page):
     connection=db_starter()
     query = '''Select mm.idmovies, mm.movie, tm.id_img, tm.id_trail, group_concat(uu.url), group_concat(ss.sitename), cp.id_cast, cp.id_plot, group_concat(gg.genre)
         from movies as mm 
@@ -83,6 +84,7 @@ def get_single_movie(val):
         GROUP BY (mm.idmovies);'''.format(val)
 
     data = []
+    genre_list = []
     result = connection.execute(query)
 
     for row in result:
@@ -104,8 +106,10 @@ def get_single_movie(val):
         temp_dict['plot'] = row[7]
         try:
             temp_dict['genres'] = list(set(row[8].split(',')))
+            genre_list = list(set(row[8].split(',')))
         except:
             temp_dict['genres'] = []
+            genre_list = []
         
         plat_dict = {}
         for pp in platforms:
@@ -117,7 +121,12 @@ def get_single_movie(val):
         data.append(temp_dict)
     
     connection.close()
-    return {'data': data}
+
+    if genre_list == []:
+        genre_list = ['action', 'comedy', 'adventure']
+
+    similar_titles = get_similar_titles(genre_list, page, False)
+    return {'data': data, 'similar':similar_titles}
 
 
 def get_movies_name(val):
