@@ -3,7 +3,10 @@ from db_initiate import search_movies, random_cat
 from filter import get_movies_name, get_single_movie, filter_movies
 from feedback import feed_back
 from title import title_render
+from pytube import YouTube
 from flask_cors import CORS
+import youtube_dl
+
 app = Flask(__name__, template_folder="/home/ubuntu/build")	 
 CORS(app)
 
@@ -64,6 +67,34 @@ def submit2(val):
     page = request.args.get('page', '1')
     return jsonify(search_movies(val, page))
 
+@app.route("/youtube/urltoraw",methods=["POST"])	
+def url_to_raw():
+    
+    url_link = request.json.get('url')
+    ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
+
+    with ydl:
+        result = ydl.extract_info(
+            url_link,
+            download=False # We just want to extract the info
+        )
+
+    if 'entries' in result:
+        # Can be a playlist or a list of videos
+        video = result['entries'][0]
+    else:
+        # Just a video
+        video = result
+    flag = False
+    for i in video['formats']:
+       if i['format_id'] == '18':
+           flag = True
+           break
+    if flag:
+        resp_data = {'success': True, 'url': i['url']}
+    else:
+        resp_data = {'success': False}
+    return jsonify(resp_data)
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
