@@ -1,5 +1,4 @@
-from flask_app_runner import app, connection
-from flask import Flask, render_template,request
+from flask_app_runner import connection
 import json
 import jwt
 import datetime
