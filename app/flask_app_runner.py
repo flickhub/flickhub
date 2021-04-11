@@ -3,10 +3,13 @@ from db_initiate import search_movies, random_cat
 from filter import get_movies_name, get_single_movie, filter_movies
 from feedback import feed_back
 from title import title_render
+from db_start import db_starter
 from flask_cors import CORS
+import annek
 app = Flask(__name__, template_folder="/home/ubuntu/build")	 
 CORS(app)
 
+connection=db_starter()
 # Build required files
 path = '/home/ubuntu/build/'
 
@@ -63,6 +66,16 @@ def auto_search(val):
 def submit2(val):
     page = request.args.get('page', '1')
     return jsonify(search_movies(val, page))
+
+@app.route('/sign_up', methods=['POST'])
+def sign_up():
+    data = request.json
+    return annek.user_sign_up(data)
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    return annek.login(data)
 
 
 if __name__ == '__main__':
