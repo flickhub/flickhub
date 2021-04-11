@@ -103,12 +103,12 @@ def url_to_raw():
 @app.route('/sign_up', methods=['POST'])
 def sign_up():
     data = request.json
-    return annek.user_sign_up(data)
+    return annek.user_sign_up(data, connection)
 
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
-    return annek.login(data)
+    return annek.login(data, connection)
 
 
 if __name__ == '__main__':
