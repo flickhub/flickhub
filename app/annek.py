@@ -1,16 +1,15 @@
-from flask_app_runner import connection
 import json
 import jwt
 import datetime
 
-def check_details_exist(email, phone_number):
+def check_details_exist(email, phone_number, connection):
     sql_query = f"select * from users where email = '{email}' or phone_number = '{phone_number}';"
     result = connection.execute(sql_query)
     rows = [x for x in result]
     return False if len(rows) == 0 else True
 
 
-def user_sign_up(data):
+def user_sign_up(data, connection):
     if len(data) < 4:
         resp = {'status': 'fail', 'msg': 'param missing'}
         return json.dumps(resp)
@@ -21,7 +20,7 @@ def user_sign_up(data):
     phone_number = data['phone_number']
     password = data['password']
 
-    if check_details_exist(email, phone_number):
+    if check_details_exist(email, phone_number, connection):
         resp = {'status': 'fail', 'msg': 'email or phone_number already exist'}
         return json.dumps(resp)
     
@@ -35,7 +34,7 @@ def user_sign_up(data):
         
     return json.dumps(resp)
 
-def login(data):
+def login(data, connection):
     if len(data) < 2:
         resp = {'status': 'fail', 'msg': 'param missing'}
         return json.dumps(resp)
