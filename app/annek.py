@@ -27,7 +27,16 @@ def user_sign_up(data, connection):
     sql_query= f"insert into users (first_name, last_name, email, phone_number, password) values ('{first_name}', '{last_name}', '{email}', '{phone_number}', '{password}');"
 
     result = connection.execute(sql_query)
-    resp = {'status': 'ok', 'msg': 'User Created'}
+    sql_query = f"Select * from users where email = '{email}';"
+    
+    result = connection.execute(sql_query)
+    for row in result:
+        break
+    
+    payload = {"user_id": row[0], 'first_name': row[1],'created_on': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
+    jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
+    
+    resp = {'status': 'ok', 'msg': 'User Created', 'jwt_token': jwt_token}
         
     return json.dumps(resp)
 
@@ -53,7 +62,7 @@ def login(data, connection):
         break
     try:
         if row[5] == data.get('password', None):
-            payload = {"user_id": row[0], 'first_name': row[1],'valid_till': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
+            payload = {"user_id": row[0], 'first_name': row[1],'created_on': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
             jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
             resp = {'status': 'ok', 'msg': 'Login Successful!', 'jwt_token': jwt_token}
         else:
