@@ -110,6 +110,11 @@ def login():
     data = request.json
     return annek.login(data, connection)
 
+@app.route('/user_activity_log', methods=['POST'])
+def user_activity_log():
+    data = request.json
+    return annek.user_activity_log(data, connection)
+
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')

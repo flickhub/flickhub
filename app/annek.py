@@ -21,43 +21,55 @@ def user_sign_up(data, connection):
     password = data['password']
 
     if check_details_exist(email, phone_number, connection):
-        resp = {'status': 'fail', 'msg': 'email or phone_number already exist'}
+        resp = {'status': 'fail', 'msg': 'Email or Phone_number already exist'}
         return json.dumps(resp)
     
     sql_query= f"insert into users (first_name, last_name, email, phone_number, password) values ('{first_name}', '{last_name}', '{email}', '{phone_number}', '{password}');"
 
-    # try: 
     result = connection.execute(sql_query)
-    resp = {'status': 'ok', 'msg': 'user_created'}
-    # except Exception as e:
-    #     resp = {'status': 'fail', 'msg': 'issue with sql'}
+    resp = {'status': 'ok', 'msg': 'User Created'}
         
     return json.dumps(resp)
 
 def login(data, connection):
     if len(data) < 2:
-        resp = {'status': 'fail', 'msg': 'param missing'}
+        resp = {'status': 'fail', 'msg': 'Param Missing'}
         return json.dumps(resp)
     
     sql_query = 'Select * from users where '
     
     email = data.get('email', None)
     if email:
+        resp = {'status': 'fail', 'msg': 'Email not found!'}
         sql_query = sql_query + f"email = '{email}';"
     else:
+        resp = {'status': 'fail', 'msg': 'Phone number not found!'}
         phone_number = data.get('phone_number', None)
         sql_query = sql_query + f"phone_number = '{phone_number}';"
     
     result = connection.execute(sql_query)
+
     for row in result:
         break
-    if row[5] == data.get('password', None):
-        payload = {"user_id": row[0], 'valid_till': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
-        jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
-        resp = {'status': 'ok', 'msg': 'login successful', 'jwt_token': jwt_token}
-    else:
-        resp = {'status': 'fail', 'msg': 'login failed'}
-    
+    try:
+        if row[5] == data.get('password', None):
+            payload = {"user_id": row[0], 'first_name': row[1],'valid_till': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
+            jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
+            resp = {'status': 'ok', 'msg': 'Login Successful!', 'jwt_token': jwt_token}
+        else:
+            resp = {'status': 'fail', 'msg': 'Password Incorrect!'}
+    except:
+        pass
     return json.dumps(resp)
     
-    
+def user_activity_log(data, connection):
+    activity_id = data['activity_id']
+    additional_details = data['additional_details']
+    user_id = data['user_id']
+
+    sql_query= f"insert into user_activity (user_id, activity_id, additonal_details) values ('{user_id}', '{activity_id}', '{additional_details}');"
+
+    result = connection.execute(sql_query)
+    resp = {'status': 'ok', 'msg': 'User activity created'}
+        
+    return json.dumps(resp)
