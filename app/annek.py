@@ -34,9 +34,9 @@ def user_sign_up(data, connection):
         break
     
     payload = {"user_id": row[0], 'first_name': row[1],'created_on': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
-    jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
+    # jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
     
-    resp = {'status': 'ok', 'msg': 'User Created', 'jwt_token': jwt_token}
+    resp = {'status': 'ok', 'msg': 'User Created', 'data': payload}
         
     return json.dumps(resp)
 
@@ -63,8 +63,8 @@ def login(data, connection):
     try:
         if row[5] == data.get('password', None):
             payload = {"user_id": row[0], 'first_name': row[1],'created_on': datetime.datetime.now().strftime('%d-%m-%yT%H:%M:%S')}
-            jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
-            resp = {'status': 'ok', 'msg': 'Login Successful!', 'jwt_token': jwt_token}
+            # jwt_token = jwt.encode(payload, "flickhub", algorithm = 'HS256')
+            resp = {'status': 'ok', 'msg': 'Login Successful!', 'data': payload}
         else:
             resp = {'status': 'fail', 'msg': 'Password Incorrect!'}
     except:
